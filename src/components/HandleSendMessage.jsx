@@ -18,11 +18,17 @@ export default async function handleSubmit(email, message, language) {
         draggable: true,
       });
     } else {
-      alert(language === "spanish" ? "Error al enviar" : "Error sending");
+      Swal.fire({
+        icon: "error",
+        title:
+          language === "spanish"
+            ? "Error al enviar el mensaje"
+            : "Error to send the menssage",
+        text: "Something went wrong!",
+      });
     }
     return true;
   } catch (e) {
-    alert();
     Swal.fire({
       icon: "error",
       title:
