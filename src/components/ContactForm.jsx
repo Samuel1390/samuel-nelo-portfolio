@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { LanguageContext } from "./context/LanguageContext";
 import { Resend } from "resend";
-import { SendMessage } from "./Resend";
+//import { SendMessage } from "./Resend";
 
 const ES_DEFAULT_MENSAGE = "Hola!, me parecio increible tu portafolio";
 const EN_DEFAULT_MENSAGE = "sfd";
