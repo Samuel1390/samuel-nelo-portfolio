@@ -162,8 +162,8 @@ function QuickLinks() {
           rel="noopener noreferrer"
           href={
             language === "spanish"
-              ? "https://drive.google.com/file/d/1Gkuy90iYYfthB2JgOG-C15byPMmjGhGY/view?usp=sharing"
-              : "https://drive.google.com/file/d/1e5tJwKk2GLv1icDUgLmCRGtD1LEbFI3r/view?usp=sharing"
+              ? "https://drive.google.com/file/d/1mwXFvx8ZuKud91iMSfjHZkhI10xyL9fx/view?usp=sharing"
+              : "https://drive.google.com/file/d/1D_wL4mXh_b82clBEut2jLxjjSpqTRfEv/view?usp=sharing"
           }
         >
           <div>
