@@ -97,6 +97,7 @@ const ContactForm = () => {
           ></textarea>
         </div>
         <button
+          type="submit"
           onClick={(e) => e.preventDefault()}
           onSubmit={(e) => handleClickSubmit(e)}
           className="bg-(--dark-color2) disabled:text-neutral-100/50 w-fit py-2 px-4 rounded-sm outline-sky-700 outline-2"
