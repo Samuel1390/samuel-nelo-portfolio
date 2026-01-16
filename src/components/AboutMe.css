@@ -1,0 +1,43 @@
+.subtitle {
+  text-align: start;
+  color: var(--light-color);
+}
+.text {
+  color: #bbb;
+  text-align: start;
+}
+.icon-div {
+  border-width: 0;
+  color: var(--live-color);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.about-me-section {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.about-imgs-container {
+  width: 400px;
+  margin-top: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.about-img {
+  height: 100%;
+  background-image: url(https://st2.depositphotos.com/2702639/10537/i/450/depositphotos_105373622-stock-photo-lines-of-code-on-computer.jpg);
+  background-size: cover;
+  background-position: center;
+  mask-image: linear-gradient(to right, transparent 0%, black 90%);
+}
+.about-me-img {
+  position: absolute;
+  z-index: 100;
+  width: 200px;
+  height: 220px;
+  top: 30%;
+  left: 100px;
+  border-radius: 100%;
+  box-shadow: 0 0 25px var(--live-color), 0 0 10px #fffa;
+}

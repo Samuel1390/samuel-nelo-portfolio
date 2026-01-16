@@ -1,0 +1,191 @@
+@import "tailwindcss";
+@tailwind utilities;
+:root {
+  --background: #161616;
+  --foreground: #eee;
+  --code-font: "Source_Code_Pro";
+  /* colores del tema andromeda*/
+  /* Fondo y Primer Plano */
+  --andromeda-background: #23262e;
+  --andromeda-background-op-50: #23262ed3;
+  --andromeda-foreground: #d5ced9;
+  --andromeda-selection: #3d4352;
+
+  /* Colores de Sintaxis */
+  --andromeda-cyan: #00e8c6; /* Variables y constantes */
+  --andromeda-yellow: #ffe66d; /* Funciones */
+  --andromeda-green: #96e072; /* Strings) */
+  --andromeda-orange: #f39c12; /* Números y propiedades */
+  --andromeda-red: #ee5d43; /* Operadores y etiquetas */
+  --andromeda-purple: #c74ded; /* keywords */
+  --andromeda-pink: #f92672; /* Etiquetas de entidad*/
+  --andromeda-blue: #7cb7ff; /* Regex y marcado */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --dark-color: #222;
+  --light-color: #d4d4d4;
+  --live-color: #26ffac;
+  --live-color2: #f1ff26;
+  --dark-color2: #000931;
+  --dark-color3: #012a;
+  --font-geist-mono: "Source_Code_Pro", monospace;
+  --font-sans: var(--font-geist-sans);
+  --breakpoint-xs: 480px;
+  --breakpoint-xs: 400px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ededed;
+    --foreground: #2a2a2a;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  color: var(--foreground);
+  background-color: var(--color-gray-800);
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+
+  padding-bottom: 10rem;
+}
+* {
+  box-sizing: border-box;
+}
+
+.general-container {
+  max-width: 1200px;
+  overflow-x: hidden !important;
+  margin-inline: auto;
+}
+.h1 {
+  filter: drop-shadow(0 0 7px var(--live-color));
+  font-size: 2.8rem;
+  background-image: linear-gradient(
+    135deg,
+    var(--live-color),
+    var(--live-color2)
+  );
+  background-clip: text;
+  color: transparent;
+  font-weight: bolder;
+  position: relative;
+  min-height: 2.5rem;
+}
+.h1::after {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 2px;
+  background-color: var(--light-color);
+  animation: opacity 0.9s infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  margin-left: 2px;
+}
+.h1::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 15%;
+  bottom: 0;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--live-color),
+    var(--live-color2)
+  );
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 10px 0 !important;
+}
+.text {
+  font-size: 0.9rem;
+  color: #d5d5d5;
+  color: var(--light-color);
+}
+.proyect-img {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+#proyect-icon-container {
+  fill: var(--dark-color2);
+  color: var(--dark-color2);
+  border-color: var(--dark-color2);
+}
+.dash {
+  @apply bg-amber-950 text-purple-50
+  hover:bg-emerald-500 hover:font-bold p-6;
+}
+/*Responsive*/
+
+@media screen and (max-width: 900px) {
+  .top {
+    flex-direction: column-reverse;
+  }
+  .about-info {
+    width: 100%;
+  }
+  .about-section p {
+    width: 90%;
+    text-align: center;
+  }
+
+  .max-w-120 {
+    padding: 20px 15px;
+  }
+
+  .icon-div {
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .about-imgs-container {
+    display: none;
+  }
+}
+.top-link {
+  padding: 10px 20px;
+  background-image: linear-gradient(
+    to right,
+    var(--color-emerald-950),
+    var(--color-emerald-700)
+  );
+  margin: 20px auto;
+  border-radius: 3px;
+  max-width: fit-content;
+  box-shadow: 0 0 10px #000a;
+}
+.top-link:hover {
+  opacity: 0.9;
+  outline: 2px solid #fff7;
+  outline-offset: -4px;
+  box-shadow: 0 0 15px #000a;
+  transition: box-shadow opacity;
+}
+@media screen and (max-width: 700px) {
+  .container {
+    width: 200px;
+    height: 200px;
+  }
+  .proyects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .proyect {
+    min-width: 300px;
+  }
+}
+@preferes-reduce-motion {
+  * {
+    animation-duration: 0s !important;
+  }
+}

@@ -1,0 +1,245 @@
+/* GENERAL*/
+
+.top-text {
+  width: 450px;
+}
+.language-btn-container {
+  display: flex;
+  padding: 6px;
+  background-color: #000;
+  margin-block: -20px 15px;
+  width: fit-content;
+  border-radius: 100px;
+  gap: 4px;
+  border: 1px solid #fff8;
+}
+.language-btn {
+  color: var(--light-color);
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color color border;
+  transition-duration: 0.3s;
+  color: #fff7;
+}
+.language-btn:active {
+  outline: 1px solid #fff6;
+}
+.language-btn:hover {
+  background-color: #6665;
+}
+.active,
+.active:hover {
+  background-color: #555;
+  color: #fff;
+}
+.text {
+  min-height: 100px;
+}
+p::after {
+  content: "";
+  position: absolute;
+  height: 17px;
+  width: 1px;
+  background-color: var(--light-color);
+  animation: opacity 0.9s infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  margin-left: 1px;
+}
+.top {
+  margin: 20px 0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  background-color: transparent;
+}
+
+section > div:first-child {
+  margin: 20px 0;
+}
+.grid-links {
+  align-self: start;
+}
+.icons {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+.icons-link:hover > svg {
+  transition: filter;
+  transition-duration: 0.5s;
+  filter: drop-shadow(0 0 5px var(--live-color))
+    drop-shadow(0 0 5px var(--live-color));
+}
+.icons svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--live-color);
+  filter: drop-shadow(0 0 7px var(--live-color));
+  border-radius: 2px;
+}
+
+.grid-link {
+  place-content: center;
+  background-color: #000d;
+  color: var(--light-color);
+  padding: 20px;
+  font-size: 1.3rem;
+  border: 1px solid var(--light-color);
+  position: relative;
+  transition: scale;
+  transition-duration: 0.3s;
+  position: relative;
+  box-shadow: -5px -5px 25px #0008, -5px -5px 20px #000e;
+}
+.grid-link:last-child {
+  padding-block: 0;
+}
+.grid-link:hover {
+  scale: 1.1;
+}
+.grid-link::before {
+  content: "";
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  height: 50%;
+  background-color: #fff3;
+  top: 0;
+  left: 0;
+}
+.grid-link > div {
+  position: relative;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  fill: currentColor;
+  stroke: currentColor;
+  max-width: 32px;
+  display: inline-block;
+}
+.grid-link h2 {
+  display: inline-block;
+}
+.grid-link:hover > div > .icon,
+.grid-link:hover > div,
+.grid-link:hover .icon > path,
+.grid-link:hover > div {
+  transition: fill color;
+  transition-duration: 0.3s;
+  fill: var(--live-color);
+  color: var(--live-color);
+}
+.grid-link:hover .icon > g {
+  stroke: var(--live-color);
+}
+.grid-link:hover > div::before {
+  content: "";
+  position: absolute;
+  width: 76%;
+  height: 3px;
+  bottom: 0;
+  background-color: var(--live-color);
+  animation: before-hover;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+.light {
+  width: 100%;
+  height: 50%;
+  background-color: #262626;
+  position: absolute;
+}
+@keyframes before-hover {
+  0% {
+    width: 0%;
+  }
+  30% {
+    width: 76%;
+  }
+  100% {
+    right: 17%;
+    width: 0%;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Responsive styles */
+
+@media (max-width: 1024px) {
+  .top {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+  }
+  .top-text {
+    width: 100%;
+    text-align: center;
+  }
+  .h1 {
+    font-size: 1.9rem;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+  .my-description {
+    text-align: center;
+    max-width: 400px;
+  }
+  .language-btn-container {
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-link {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .grid-link > div {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .icons svg {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top {
+    padding: 10px 20px;
+  }
+
+  .grid-link {
+    padding: 10px;
+  }
+
+  .grid-link h2 {
+    font-size: 1rem;
+  }
+}

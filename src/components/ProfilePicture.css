@@ -1,0 +1,141 @@
+.code {
+  background-color: var(--andromeda-background-op-50);
+  color: var(--andromeda-foreground);
+  border-radius: 8px;
+  padding: 20px 0;
+  height: fit-content;
+  width: fit-content;
+  perspective: 1000px;
+  position: absolute;
+}
+.code > div {
+  padding-left: 40px;
+}
+.code span {
+  filter: drop-shadow(0 0 5px currentColor) drop-shadow(0 0 1px #fffa);
+}
+.code-2 {
+  transform-style: preserve-3d;
+  transform: rotateY(30deg);
+  top: 20px;
+  scale: 0.7;
+  left: -15%;
+  width: 350px;
+  box-shadow: 40px -10px #0003;
+  z-index: 100;
+}
+.code-1 {
+  z-index: 150;
+  transform-style: preserve-3d;
+  transform: rotateY(-30deg);
+  margin-top: 20px;
+  scale: 0.7;
+  right: -20%;
+  top: 50px;
+  box-shadow: -40px -10px #0003;
+}
+.container,
+.layer {
+  width: 500px;
+  height: 500px;
+  background-position: top;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+  z-index: 200;
+}
+.container {
+  background-image: url(../public/img-portfolio.png);
+  border-radius: 100%;
+  outline: 1px solid var(--light-color);
+}
+.layer {
+  background-image: url(../public/img-portfolio-no-bg.png);
+  background-clip: polygon(
+    0 0,
+    100% 0,
+    100% 20%,
+    100% 89%,
+    80% 100%,
+    20% 100%,
+    0 88%,
+    0% 20%
+  );
+}
+.react-logo {
+  position: absolute;
+  left: 33%;
+  top: 50%;
+  transform: rotate(30deg);
+  animation: rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0 0 10px #ddf0ffce) drop-shadow(0 0 5px #ffffff42)
+    drop-shadow(0 0 25px rgba(68, 136, 238, 0.712))
+    drop-shadow(0 0 40px #4488ee);
+}
+.title {
+  font-size: 2rem;
+  text-align: center;
+  color: #f6f9ff;
+  background-color: #000000;
+  width: fit-content;
+  text-wrap: nowrap;
+  padding: 10px 20px;
+  border-radius: 100px;
+  align-self: flex-end;
+  border: 1px solid #fff;
+  position: absolute;
+  bottom: -10px;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(390deg);
+  }
+}
+.line-marked {
+  position: relative;
+  z-index: 200;
+}
+.line-marked::before {
+  content: "";
+  z-index: 180;
+  position: absolute;
+  background-color: var(--color-gray-500);
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 700px) {
+  .container,
+  .layer {
+    width: 320px;
+    height: 320px;
+  }
+  .code span {
+    font-size: 0.9rem;
+  }
+  .code-1 {
+    left: 80px;
+    top: -80px;
+  }
+  .code-2 {
+    left: -120px;
+  }
+  .title {
+    padding-block: 5px;
+    font-size: 1.2rem;
+    bottom: 0px;
+  }
+  .react-logo {
+    width: 100px;
+    top: 140px;
+    left: 36%;
+  }
+}
