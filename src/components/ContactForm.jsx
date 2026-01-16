@@ -1,50 +1,58 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { LanguageContext } from "./context/LanguageContext";
 import { Resend } from "resend";
+import handleSubmit from "./HandleSendMessage";
 
-const ES_DEFAULT_MENSAGE = "Hola!, me parecio increible tu portafolio";
-const EN_DEFAULT_MENSAGE = "sfd";
+const ES_DEFAULT_MENSAGE =
+  "¡Saludos!, me interesa tu perfil de desarrollador, mi nombre es [tu-nombre] espero nos podamos contactar muy pronto.";
+const EN_DEFAULT_MENSAGE =
+  "Greetings! I'm interested in your developer profile. My name is [your-name], and I hope we can connect very soon.";
 
 const ContactForm = () => {
   const { language } = useContext(LanguageContext);
+  const [message, setMessage] = useState(
+    language === "spanish" ? ES_DEFAULT_MENSAGE : EN_DEFAULT_MENSAGE
+  );
+  const [isLoading, setIsLoading] = useState(false);
 
   const emailRef = useRef(null);
   const messageRef = useRef(null);
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    try {
-      const response = await fetch("/api/send", {
-        method: "POST",
-        body: JSON.stringify({
-          email: emailRef.current.value,
-          message: messageRef.current.value,
-        }),
-        headers: { "Content-Type": "application/json" },
-      });
+  const [showForm, setShowForm] = useState(false);
 
-      if (response.ok) {
-        alert(language === "spanish" ? "Mensaje enviado" : "Message sent");
-        console.log("message sent");
-        emailRef.current.value = "";
-        messageRef.current.value = "";
-      } else {
-        alert(language === "spanish" ? "Error al enviar" : "Error sending");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert(language === "spanish" ? "Error de conexión" : "Connection error");
-    }
+  async function handleClickSubmit(e) {
+    e.preventDefault();
+    const status = await handleSubmit(
+      emailRef.current.value,
+      messageRef.current.value
+    );
+    console.log(status);
+    setIsLoading(status);
   }
+  function handleMessageInput() {
+    if (
+      messageRef.current.value === ES_DEFAULT_MENSAGE ||
+      messageRef.current.value === EN_DEFAULT_MENSAGE
+    ) {
+      setMessage(
+        language === "spanish" ? ES_DEFAULT_MENSAGE : EN_DEFAULT_MENSAGE
+      );
+      return;
+    }
+    setMessage(messageRef.current.value);
+  }
+  console.log(isLoading);
+
   return (
     <div className="relative group">
       <div
+        onClick={() => setShowForm(!showForm)}
         aria-label={
           language === "spanish"
             ? "icono del formulario de contacto de Samuel Nelo"
             : "icon from Samuel Nelo's contact form"
         }
-        className="icons-link"
+        className="icons-link cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +64,7 @@ const ContactForm = () => {
         </svg>
       </div>
       <form
-        className="z-100 absolute flex-col gap-4 border border-neutral-100 text-neutral-200 p-4 rounded-xl bg-neutral-950 hover:flex group-hover:flex hidden"
+        className={`${showForm ? "flex" : "hidden"} z-100 absolute flex-col gap-4 border border-neutral-100 text-neutral-200 p-4 rounded-xl bg-neutral-950`}
         action=""
       >
         <div className="flex flex-col">
@@ -64,8 +72,8 @@ const ContactForm = () => {
             Email:
           </label>
           <input
-            className="rounded-sm border border-neutral-100 p-2 bg-gray-800"
-            type="text"
+            className="required:outline-red-500 required:outline-offset-4 truncate text-ellipsis rounded-sm border border-neutral-100 p-2 bg-gray-800"
+            type="email"
             name="email"
             id="email"
             placeholder={language ? "Introduce tu email" : "Write your email"}
@@ -77,12 +85,11 @@ const ContactForm = () => {
             {language === "spanish" ? "Mensaje: " : "Message"}
           </label>
           <textarea
-            className="rounded-sm border border-neutral-100 bg-gray-800 p-2"
+            className="min-h-30 h-fit max-h-110 rounded-sm border border-neutral-100 bg-gray-800 p-2"
             name="menssage"
             id="men"
-            // value={
-            //   language === "spanish" ? ES_DEFAULT_MENSAGE : EN_DEFAULT_MENSAGE
-            // }</div>
+            value={message}
+            onChange={() => handleMessageInput()}
             placeholder={
               language === "spanish" ? "Envíame un mensaje" : "Send me Message"
             }
@@ -90,16 +97,22 @@ const ContactForm = () => {
           ></textarea>
         </div>
         <button
-          onClick={(e) => handleSubmit(e)}
-          className="bg-(--dark-color2) w-fit py-2 px-4 rounded-sm outline-sky-700 outline-2"
+          onClick={(e) => e.preventDefault()}
+          onSubmit={(e) => handleClickSubmit(e)}
+          className="bg-(--dark-color2) disabled:text-neutral-100/50 w-fit py-2 px-4 rounded-sm outline-sky-700 outline-2"
+          disabled={isLoading}
         >
-          {language === "spanish" ? "Enviar" : "Submit"}
+          {isLoading
+            ? language === "spanish"
+              ? "Cargando..."
+              : "Loading..."
+            : language === "spanish"
+              ? "Enviar"
+              : "Submit"}
         </button>
       </form>
     </div>
   );
 };
-
-ContactForm.propTypes = {};
 
 export default ContactForm;

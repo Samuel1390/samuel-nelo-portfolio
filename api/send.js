@@ -4,14 +4,12 @@ export default async function handler(req, res) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
-    // Validar que el body existe
     if (!req.body) {
       return res.status(400).json({ error: "No data provided" });
     }
 
     const { email, message } = req.body;
 
-    // Validar campos requeridos
     if (!email || !message) {
       return res.status(400).json({
         error: "Email and message are required",
@@ -19,7 +17,6 @@ export default async function handler(req, res) {
       });
     }
 
-    // Validar formato de email básico
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return res.status(400).json({ error: "Invalid email format" });
@@ -29,9 +26,9 @@ export default async function handler(req, res) {
     console.log("Message length:", message.length);
 
     const data = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>", // FIJADO - no cambiar dinámicamente
+      from: "Portfolio Contact <onboarding@resend.dev>",
       to: ["snelo1390@gmail.com"],
-      reply_to: email, // Aquí va el email del usuario para responder
+      reply_to: email,
       subject: "Nuevo contacto del Portfolio",
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 600px;">
