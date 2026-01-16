@@ -27,7 +27,7 @@ const ContactForm = () => {
       messageRef.current.value,
       language
     );
-    setIsLoading(!status);
+    setIsLoading(!status); //status devueve true siempre que se resuelve la funcion handle submit
   }
   function handleMessageInput() {
     if (
@@ -64,18 +64,35 @@ const ContactForm = () => {
       </div>
       <form
         onSubmit={(e) => handleClickSubmit(e)}
-        className={`${showForm ? "flex" : "hidden"} z-100 absolute flex-col gap-4 border border-neutral-100 text-neutral-200 p-4 rounded-xl bg-neutral-950`}
+        className={`${showForm ? "opacity-100 flex" : "opacity-0 hidden"} transition-opacity transitio z-100 absolute flex-col gap-4 border border-neutral-100 text-neutral-200 p-4 bg-slate-950 contact-form`}
         action=""
       >
+        <svg
+          className=" sm:hidden block absolute right-0 top-0"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="#d00"
+            d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"
+          />
+        </svg>
+        <h2 className="font-bold text-xl w-full text-center">
+          {language ? "Contáctame" : "Contact me"}
+        </h2>
         <div className="flex flex-col">
           <label className="self-start" htmlFor="email">
             Email:
           </label>
           <input
-            className="required:outline-red-500 required:outline-offset-4 truncate text-ellipsis rounded-sm border border-neutral-100 p-2 bg-gray-800"
+            className="focus:outline-sky-500 required:outline-red-500 required:outline-offset-4 truncate text-ellipsis rounded-sm border border-neutral-100 p-2 bg-gray-800"
             type="email"
             name="email"
             id="email"
+            min={3}
+            required
             placeholder={language ? "Introduce tu email" : "Write your email"}
             ref={emailRef}
           />
@@ -85,9 +102,10 @@ const ContactForm = () => {
             {language === "spanish" ? "Mensaje: " : "Message"}
           </label>
           <textarea
-            className="min-h-30 h-fit max-h-110 rounded-sm border border-neutral-100 bg-gray-800 p-2"
+            className="focus:outline-sky-500 required:outline-red-500 min-h-30 h-fit max-h-110 rounded-sm border border-neutral-100 bg-gray-800 p-2"
             name="menssage"
             id="men"
+            required
             value={message}
             onChange={() => handleMessageInput()}
             placeholder={
@@ -96,19 +114,21 @@ const ContactForm = () => {
             ref={messageRef}
           ></textarea>
         </div>
-        <button
-          type="submit"
-          className="bg-(--dark-color2) disabled:text-neutral-100/50 w-fit py-2 px-4 rounded-sm outline-sky-700 outline-2"
-          disabled={isLoading}
-        >
-          {isLoading
-            ? language === "spanish"
-              ? "Cargando..."
-              : "Loading..."
-            : language === "spanish"
-              ? "Enviar"
-              : "Submit"}
-        </button>
+        <div className="flex items-center">
+          <button
+            type="submit"
+            className="font-bold bg-sky-500 disabled:text-neutral-100/50 w-fit py-2 px-4 rounded-sm "
+            disabled={isLoading}
+          >
+            {isLoading
+              ? language === "spanish"
+                ? "Cargando..."
+                : "Loading..."
+              : language === "spanish"
+                ? "Enviar"
+                : "Submit"}
+          </button>
+        </div>
       </form>
     </div>
   );

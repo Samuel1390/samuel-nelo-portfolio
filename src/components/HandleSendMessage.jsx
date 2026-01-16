@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 export default async function handleSubmit(email, message, language) {
   try {
     const response = await fetch("/api/send", {
@@ -10,15 +12,26 @@ export default async function handleSubmit(email, message, language) {
     });
 
     if (response.ok) {
-      alert(language === "spanish" ? "Mensaje enviado" : "Message sent");
-      console.log("message sent");
+      Swal.fire({
+        title: language === "spanish" ? "Mensaje enviado" : "Message sent",
+        icon: "success",
+        draggable: true,
+      });
     } else {
       alert(language === "spanish" ? "Error al enviar" : "Error sending");
     }
     return true;
-  } catch (error) {
-    console.error("Error:", error);
-    alert(language === "spanish" ? "Error de conexión" : "Connection error");
+  } catch (e) {
+    alert();
+    Swal.fire({
+      icon: "error",
+      title:
+        language === "spanish"
+          ? "Error al enviar el mensaje"
+          : "Error to send the menssage",
+      text: "Something went wrong!",
+    });
+    console.log(e);
     return true;
   }
 }

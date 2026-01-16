@@ -95,7 +95,9 @@ section > div:first-child {
   transition: scale;
   transition-duration: 0.3s;
   position: relative;
-  box-shadow: -5px -5px 25px #0008, -5px -5px 20px #000e;
+  box-shadow:
+    -5px -5px 25px #0008,
+    -5px -5px 20px #000e;
 }
 .grid-link:last-child {
   padding-block: 0;
@@ -227,6 +229,12 @@ section > div:first-child {
   .icons svg {
     width: 45px;
     height: 45px;
+  }
+  .contact-form {
+    z-index: 500;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 

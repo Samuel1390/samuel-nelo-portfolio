@@ -33,14 +33,14 @@ export default async function handler(req, res) {
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 600px;">
           <h2 style="color: #333;">Nuevo mensaje desde tu Portfolio</h2>
-          <p><strong>📧 De:</strong> ${email}</p>
-          <p><strong>📝 Mensaje:</strong></p>
+          <p><strong> De:</strong> ${email}</p>
+          <p><strong> Mensaje:</strong></p>
           <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 10px 0;">
             ${message.replace(/\n/g, "<br>")}
           </div>
           <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
           <p style="color: #666; font-size: 12px;">
-            📅 Enviado el: ${new Date().toLocaleString("es-ES")}
+            Enviado el: ${new Date().toLocaleString("es-ES")}
           </p>
         </div>
       `,
