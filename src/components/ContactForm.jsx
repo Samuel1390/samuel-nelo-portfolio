@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef } from "react";
 import { LanguageContext } from "./context/LanguageContext";
 import { Resend } from "resend";
 //import { SendMessage } from "./Resend";
@@ -12,12 +12,13 @@ const ContactForm = () => {
   const emailRef = useRef(null);
   const messageRef = useRef(null);
 
-  function handleSubmit(e) {
-    return e;
-    //e.preventDefault();
-    //const email = emailRef.current.value;
-    //const message = messageRef.current.value;
-    //SendMessage(email, message);
+  async function handleSubmit(e) {
+    e.preventDefault();
+    await fetch("/api/send", {
+      method: "POST",
+      body: JSON.stringify({ message: emailRef.current.value }),
+      headers: { "Content-Type": "application/json" },
+    });
   }
   return (
     <div className="relative group">
