@@ -51,7 +51,7 @@ const ContactForm = () => {
             ? "icono del formulario de contacto de Samuel Nelo"
             : "icon from Samuel Nelo's contact form"
         }
-        className="icons-link cursor-pointer"
+        className=" icons-link cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -64,11 +64,12 @@ const ContactForm = () => {
       </div>
       <form
         onSubmit={(e) => handleClickSubmit(e)}
-        className={`${showForm ? "opacity-100 flex" : "opacity-0 hidden"} transition-opacity transitio z-100 absolute flex-col gap-4 border border-neutral-100 text-neutral-200 p-4 bg-slate-950 contact-form`}
+        className={`${showForm ? "opacity-100 flex" : "opacity-0 hidden"} min-w-70  transition-opacity transitio z-100 absolute flex-col gap-4 border border-neutral-100 text-neutral-200 p-4 bg-slate-950 contact-form`}
         action=""
       >
         <svg
           className=" sm:hidden block absolute right-0 top-0"
+          onClick={() => setShowForm(false)}
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"

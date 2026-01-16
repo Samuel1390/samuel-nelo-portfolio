@@ -35,7 +35,6 @@ export default async function handleSubmit(email, message, language) {
         language === "spanish"
           ? "Error al enviar el mensaje"
           : "Error to send the menssage",
-      text: "Something went wrong!",
     });
     console.log(e);
     return true;
