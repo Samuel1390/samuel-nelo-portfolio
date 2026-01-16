@@ -1,7 +1,6 @@
 import React, { useContext, useRef } from "react";
 import { LanguageContext } from "./context/LanguageContext";
 import { Resend } from "resend";
-//import { SendMessage } from "./Resend";
 
 const ES_DEFAULT_MENSAGE = "Hola!, me parecio increible tu portafolio";
 const EN_DEFAULT_MENSAGE = "sfd";
@@ -24,10 +23,9 @@ const ContactForm = () => {
         headers: { "Content-Type": "application/json" },
       });
 
-      const data = await response.json();
-
       if (response.ok) {
         alert(language === "spanish" ? "Mensaje enviado" : "Message sent");
+        console.log("message sent");
         emailRef.current.value = "";
         messageRef.current.value = "";
       } else {

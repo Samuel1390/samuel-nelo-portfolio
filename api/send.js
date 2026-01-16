@@ -1,16 +1,14 @@
 import { Resend } from "resend";
 
 export default async function handler(req, res) {
-  console.log("chesse");
-  console.log(process.env.RESEND_API_KEY);
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
     const data = await resend.emails.send({
-      from: "Tu Portfolio <onboarding@resend.dev>",
+      from: `${req.body.email || "<onboarding@resend.dev>"}`,
       to: ["snelo1390@gmail.com"],
       subject: "Nuevo contacto del Portfolio",
-      html: `<p>Mensaje: ${req.body.message}</p>`,
+      html: `<h2>Mensaje: ${req.body.message}</h2>`,
     });
 
     res.status(200).json(data);
