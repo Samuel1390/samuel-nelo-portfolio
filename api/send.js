@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 
 export default async function handler(req, res) {
+  console.log("chesse");
   console.log(process.env.RESEND_API_KEY);
   const resend = new Resend(process.env.RESEND_API_KEY);
 
