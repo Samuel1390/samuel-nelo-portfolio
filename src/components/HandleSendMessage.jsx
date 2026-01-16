@@ -1,8 +1,4 @@
-import { LanguageContext } from "./context/LanguageContext";
-import { useContext } from "react";
-
-export default async function handleSubmit(email, message) {
-  const { language } = useContext(LanguageContext);
+export default async function handleSubmit(email, message, language) {
   try {
     const response = await fetch("/api/send", {
       method: "POST",

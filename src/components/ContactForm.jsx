@@ -14,7 +14,6 @@ const ContactForm = () => {
     language === "spanish" ? ES_DEFAULT_MENSAGE : EN_DEFAULT_MENSAGE
   );
   const [isLoading, setIsLoading] = useState(false);
-
   const emailRef = useRef(null);
   const messageRef = useRef(null);
 
@@ -22,12 +21,13 @@ const ContactForm = () => {
 
   async function handleClickSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
     const status = await handleSubmit(
       emailRef.current.value,
-      messageRef.current.value
+      messageRef.current.value,
+      language
     );
-    console.log(status);
-    setIsLoading(status);
+    setIsLoading(!status);
   }
   function handleMessageInput() {
     if (
@@ -41,7 +41,6 @@ const ContactForm = () => {
     }
     setMessage(messageRef.current.value);
   }
-  console.log(isLoading);
 
   return (
     <div className="relative group">
@@ -64,6 +63,7 @@ const ContactForm = () => {
         </svg>
       </div>
       <form
+        onSubmit={(e) => handleClickSubmit(e)}
         className={`${showForm ? "flex" : "hidden"} z-100 absolute flex-col gap-4 border border-neutral-100 text-neutral-200 p-4 rounded-xl bg-neutral-950`}
         action=""
       >
@@ -98,8 +98,6 @@ const ContactForm = () => {
         </div>
         <button
           type="submit"
-          onClick={(e) => e.preventDefault()}
-          onSubmit={(e) => handleClickSubmit(e)}
           className="bg-(--dark-color2) disabled:text-neutral-100/50 w-fit py-2 px-4 rounded-sm outline-sky-700 outline-2"
           disabled={isLoading}
         >
