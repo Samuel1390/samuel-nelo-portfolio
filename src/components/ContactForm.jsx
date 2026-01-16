@@ -14,7 +14,7 @@ const ContactForm = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await fetch("/api/send", {
+    await fetch("../../api/send", {
       method: "POST",
       body: JSON.stringify({ message: emailRef.current.value }),
       headers: { "Content-Type": "application/json" },
