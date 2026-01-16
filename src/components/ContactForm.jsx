@@ -14,11 +14,29 @@ const ContactForm = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await fetch("../../api/send", {
-      method: "POST",
-      body: JSON.stringify({ message: emailRef.current.value }),
-      headers: { "Content-Type": "application/json" },
-    });
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        body: JSON.stringify({
+          email: emailRef.current.value,
+          message: messageRef.current.value,
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert(language === "spanish" ? "Mensaje enviado" : "Message sent");
+        emailRef.current.value = "";
+        messageRef.current.value = "";
+      } else {
+        alert(language === "spanish" ? "Error al enviar" : "Error sending");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert(language === "spanish" ? "Error de conexión" : "Connection error");
+    }
   }
   return (
     <div className="relative group">
