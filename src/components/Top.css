@@ -4,6 +4,7 @@
   width: 450px;
 }
 .language-btn-container {
+  box-shadow: 0 5px 10px #000a;
   display: flex;
   padding: 6px;
   background-color: #000;

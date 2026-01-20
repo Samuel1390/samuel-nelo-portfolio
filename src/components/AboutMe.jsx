@@ -2,6 +2,7 @@ import { FaGraduationCap } from "react-icons/fa6";
 import { TbTargetArrow } from "react-icons/tb";
 import { IoPerson } from "react-icons/io5";
 import { LanguageContext } from "./context/LanguageContext";
+import myImage from "../assets/sam-nelo.jpeg";
 import { useContext } from "react";
 import "../globals.css";
 
@@ -74,7 +75,7 @@ export function AboutMe() {
             <div className="about-imgs-container">
               <div className="about-img"></div>
               <img
-                src="https://avatars.githubusercontent.com/u/195463641?v=4"
+                src={myImage}
                 alt="imagen de Samuel Nelo"
                 className="about-me-img hidden sm:block object-cover overflow-hidden"
               />

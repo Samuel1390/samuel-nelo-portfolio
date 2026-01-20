@@ -74,16 +74,14 @@ export function Proyects({ proyects }) {
                       </p>
                     </div>
                     <span className="bg-teal-400/50 px-2 py-2 rounded-sm text-zinc-950 border-teal-950 border-l-4">
-                      Ir al
+                      {language === "spanish" ? "Ir al " : "go to the "}
                       <a
                         className="ml-1 text-teal-950 underline font-bold"
                         href={codeSource}
                         rel="noopener"
                         target="_blank"
                       >
-                        {language === "spanish"
-                          ? "código fuente"
-                          : "source code"}
+                        {language === "spanish" ? "repositorio" : "repository"}
                       </a>
                     </span>
                   </div>

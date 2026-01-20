@@ -24,7 +24,10 @@ export default async function handleSubmit(email, message, language) {
           language === "spanish"
             ? "Error al enviar el mensaje"
             : "Error to send the menssage",
-        text: "Something went wrong!",
+        text:
+          language === "spanish"
+            ? "Si deseas enviarme un email: snelo1390@gmail.com"
+            : "If you wish send me an  email: snelo1390@gmail.com",
       });
     }
     return true;
@@ -35,6 +38,10 @@ export default async function handleSubmit(email, message, language) {
         language === "spanish"
           ? "Error al enviar el mensaje"
           : "Error to send the menssage",
+      text:
+        language === "spanish"
+          ? "Si deseas enviarme un email: snelo1390@gmail.com"
+          : "If you wish send me an  email: snelo1390@gmail.com",
     });
     console.log(e);
     return true;

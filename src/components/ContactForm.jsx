@@ -11,7 +11,7 @@ const EN_DEFAULT_MENSAGE =
 const ContactForm = () => {
   const { language } = useContext(LanguageContext);
   const [message, setMessage] = useState(
-    language === "spanish" ? ES_DEFAULT_MENSAGE : EN_DEFAULT_MENSAGE
+    language === "spanish" ? ES_DEFAULT_MENSAGE : EN_DEFAULT_MENSAGE,
   );
   const [isLoading, setIsLoading] = useState(false);
   const emailRef = useRef(null);
@@ -25,7 +25,7 @@ const ContactForm = () => {
     const status = await handleSubmit(
       emailRef.current.value,
       messageRef.current.value,
-      language
+      language,
     );
     setIsLoading(!status); //status devueve true siempre que se resuelve la funcion handle submit
   }
@@ -35,7 +35,7 @@ const ContactForm = () => {
       messageRef.current.value === EN_DEFAULT_MENSAGE
     ) {
       setMessage(
-        language === "spanish" ? ES_DEFAULT_MENSAGE : EN_DEFAULT_MENSAGE
+        language === "spanish" ? ES_DEFAULT_MENSAGE : EN_DEFAULT_MENSAGE,
       );
       return;
     }
@@ -64,7 +64,7 @@ const ContactForm = () => {
       </div>
       <form
         onSubmit={(e) => handleClickSubmit(e)}
-        className={`${showForm ? "opacity-100 flex" : "opacity-0 hidden"} min-w-70  transition-opacity transitio z-100 absolute flex-col gap-4 border border-neutral-100 text-neutral-200 p-4 bg-slate-950 contact-form`}
+        className={`${showForm ? "opacity-100 flex" : "opacity-0 hidden"}  min-w-70  transition-opacity transitio z-100 absolute flex-col gap-4 border border-neutral-100 text-neutral-200 p-4 bg-slate-950 contact-form shadow-2xl shadow-neutral-900`}
         action=""
       >
         <svg
@@ -100,7 +100,7 @@ const ContactForm = () => {
         </div>
         <div className="flex flex-col">
           <label className="self-start" htmlFor="men">
-            {language === "spanish" ? "Mensaje: " : "Message"}
+            {language === "spanish" ? "Mensaje: " : "Message:"}
           </label>
           <textarea
             className="focus:outline-sky-500 required:outline-red-500 min-h-30 h-fit max-h-110 rounded-sm border border-neutral-100 bg-gray-800 p-2"
@@ -118,7 +118,7 @@ const ContactForm = () => {
         <div className="flex items-center">
           <button
             type="submit"
-            className="font-bold bg-sky-500 disabled:text-neutral-100/50 w-fit py-2 px-4 rounded-sm "
+            className="font-bold shadow-sky-400/30 shadow-xl text-shadow-sky-900/50 text-shadow-md cursor-pointer hover:bg-sky-600 bg-sky-500 disabled:text-neutral-600/50 w-fit py-2 px-4 rounded-sm "
             disabled={isLoading}
           >
             {isLoading

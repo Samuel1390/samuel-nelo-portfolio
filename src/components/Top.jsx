@@ -74,6 +74,8 @@ function Icons() {
     <div className="icons">
       <a
         className="icons-link"
+        target="_blank"
+        rel="noopener"
         href="https://github.com/Samuel1390"
         aria-label={
           language === "spanish"
