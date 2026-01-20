@@ -5,8 +5,6 @@ import { Skills } from "./components/Skills";
 import { Proyects } from "./components/Proyects";
 import { Top } from "./components/Top";
 import { PruebaTailwind } from "./components/Prueba";
-import { LanguageContext } from "./components/context/LanguageContext";
-import { useContext } from "react";
 
 const proyects = [
   {
@@ -56,7 +54,6 @@ const proyects = [
 ];
 
 function App() {
-  const { language, setLanguage } = useContext(LanguageContext);
   return (
     <div className="general-container w-full max-w-300">
       <Top />

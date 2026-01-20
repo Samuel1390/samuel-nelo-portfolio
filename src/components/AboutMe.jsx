@@ -75,6 +75,7 @@ export function AboutMe() {
             <div className="about-imgs-container">
               <div className="about-img"></div>
               <img
+                loading="lazy"
                 src={myImage}
                 alt="imagen de Samuel Nelo"
                 className="about-me-img hidden sm:block object-cover overflow-hidden"

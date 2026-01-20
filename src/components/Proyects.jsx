@@ -1,12 +1,10 @@
 import { HtmlSvg, JsSvg, CssSvg, ReactSvg, TailwindSvg } from "./Skills";
 import { FaCode } from "react-icons/fa";
-
 import { useContext } from "react";
 import { LanguageContext } from "./context/LanguageContext";
-
 import { FiCodesandbox } from "react-icons/fi";
-
 import "../globals.css";
+
 export function Proyects({ proyects }) {
   const languageContext = useContext(LanguageContext);
   const { language } = languageContext;
@@ -41,6 +39,7 @@ export function Proyects({ proyects }) {
             >
               <picture className="proyects-picture w-full h-40 overflow-hidden">
                 <img
+                  loading="lazy"
                   className="proyect-img size-full object-cover"
                   src={image}
                   alt={`imagen de la página de ${
