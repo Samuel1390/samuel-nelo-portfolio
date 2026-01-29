@@ -43,11 +43,7 @@ export function Skills() {
             <GitSvg />
             <GithubSvg />
             <TailwindSvg />
-            <ReactSvg
-              text={
-                language === "spanish" ? "Aprendiendo react" : "Learning react"
-              }
-            />
+            <ReactSvg />
           </div>
         </div>
         <div className="skill">
@@ -179,7 +175,7 @@ export function ReactSvg({ proyectIcon, hidden, text = "React" }) {
           <ellipse rx="10" ry="4.5" transform="rotate(120)"></ellipse>
         </g>
       </svg>
-      <h3 className={text === "React" ? "" : "text-amber-400"}>{text}</h3>
+      <h3>{text}</h3>
     </div>
   );
 }
