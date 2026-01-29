@@ -94,7 +94,7 @@ function Icons() {
         </svg>
       </a>
       <a
-        href="www.linkedin.com/in/samuel-david-nelo-132632378"
+        href="https://www.linkedin.com/in/samuel-david-nelo-132632378/"
         className="icons-link"
         rel="noopener"
         target="_blank"
