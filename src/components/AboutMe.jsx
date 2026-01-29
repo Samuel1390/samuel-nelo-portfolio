@@ -2,6 +2,7 @@ import { FaGraduationCap } from "react-icons/fa6";
 import { TbTargetArrow } from "react-icons/tb";
 import { IoPerson } from "react-icons/io5";
 import { LanguageContext } from "./context/LanguageContext";
+
 import myImage from "../assets/sam-nelo.jpeg";
 import { useContext } from "react";
 import "../globals.css";
@@ -9,7 +10,7 @@ import "../globals.css";
 import "./AboutMe.css";
 const paragraphs = {
   EsAboutMe:
-    "Desarrollador Front-End apasionado por crear experienciasdigitales que combinen funcionalidad y diseño. Mi viaje en laprogramación comenzó con curiosidad y se transformó en una dedicación constante por aprender y mejorar cada día.",
+    "Desarrollador Front-End apasionado por crear experiencias digitales que combinen funcionalidad y diseño. Mi viaje en la programación comenzó con curiosidad y se transformó en una dedicación constante por aprender y mejorar cada día.",
   EnAboutMe:
     "Passionate Front-End Developer dedicated to crafting digital experiences that blend functionality and design. My programming journey started with curiosity and has evolved into a steadfast commitment to learning and improving every day.",
   EsFormation:
@@ -26,6 +27,9 @@ export function AboutMe() {
   const { language } = useContext(LanguageContext);
   return (
     <>
+      <h2 className="text-center my-10 text-5xl font-lato text-neutral-100">
+        {language === "spanish" ? "Acerca de mí" : "About me"}
+      </h2>
       <div
         id="about-section"
         className="

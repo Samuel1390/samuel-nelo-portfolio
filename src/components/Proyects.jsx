@@ -15,7 +15,7 @@ export function Proyects({ proyects }) {
     >
       <div className="flex items-center  justify-center text-center p-2.5 gap-2.5">
         <FaCode size={38} />
-        <h2 className="text-5xl">
+        <h2 className="text-5xl text-neutral-100">
           {language === "spanish" ? "Proyectos" : "Projects"}
         </h2>
       </div>
@@ -34,8 +34,8 @@ export function Proyects({ proyects }) {
           } = proyect;
           return (
             <div
-              key={title}
-              className=" proyect flex flex-col grow basis-44 max-w-70 bg-neutral-50 border-neutral-50 border gap-2"
+              key={title} // proyects section
+              className="proyect flex flex-col grow basis-44 max-w-70 bg-neutral-50 border-neutral-50 border gap-2"
             >
               <picture className="proyects-picture w-full h-40 overflow-hidden">
                 <img
@@ -49,7 +49,7 @@ export function Proyects({ proyects }) {
                   }`}
                 />
               </picture>
-              <div className="flex justify-between flex-col items-center">
+              <div className="flex grow justify-between flex-col items-center">
                 <div className="p-2.5 font-lato">
                   <div className="proyect-text flex flex-col">
                     <div>
@@ -84,11 +84,15 @@ export function Proyects({ proyects }) {
                       </a>
                     </span>
                   </div>
-                  <div className="flex items-center self-end flex-col text-center p-2.5 gap-2">
-                    <FiCodesandbox />
-                    <h2 className="text-2xl font-bold text-zinc-900">
-                      {language === "spanish" ? "Tecnologías" : "Technologies"}
-                    </h2>
+                  <div className="flex items-center flex-col text-center p-2.5 gap-2">
+                    <div className="gap-4 flex items-center justify-center">
+                      <h2 className="text-2xl font-bold text-zinc-900">
+                        {language === "spanish"
+                          ? "Tecnologías"
+                          : "Technologies"}
+                      </h2>
+                      <FiCodesandbox className="text-gray-900" />
+                    </div>
                     <div className="skills-container">
                       <HtmlSvg proyectIcon={true} />
                       <CssSvg proyectIcon={true} />
