@@ -1,4 +1,11 @@
-import { HtmlSvg, JsSvg, CssSvg, ReactSvg, TailwindSvg } from "./Skills";
+import {
+  HtmlSvg,
+  JsSvg,
+  CssSvg,
+  ReactSvg,
+  TailwindSvg,
+  TypescriptSvg,
+} from "./Skills";
 import { FaCode } from "react-icons/fa";
 import { useContext } from "react";
 import { LanguageContext } from "./context/LanguageContext";
@@ -96,7 +103,12 @@ export function Proyects({ proyects }) {
                     <div className="skills-container">
                       <HtmlSvg proyectIcon={true} />
                       <CssSvg proyectIcon={true} />
-                      <JsSvg proyectIcon={true} />
+                      <JsSvg
+                        proyectIcon={true}
+                        hidden={
+                          technologies.includes("javascript") ? false : true
+                        }
+                      />
                       <TailwindSvg
                         proyectIcon={true}
                         hidden={
@@ -106,6 +118,12 @@ export function Proyects({ proyects }) {
                       <ReactSvg
                         proyectIcon={true}
                         hidden={technologies.includes("react") ? false : true}
+                      />
+                      <TypescriptSvg
+                        proyectIcon={true}
+                        hidden={
+                          technologies.includes("typescript") ? false : true
+                        }
                       />
                     </div>
                   </div>

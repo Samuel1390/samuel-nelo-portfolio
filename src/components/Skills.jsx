@@ -200,6 +200,31 @@ export function TailwindSvg({ proyectIcon, hidden, text = "Tailwindcss" }) {
     </div>
   );
 }
+export const TypescriptSvg = ({ proyectIcon, hidden, text = "TypeScript" }) => {
+  return (
+    <div
+      hidden={hidden}
+      className={className}
+      id={proyectIcon ? "proyect-icon-container" : ""}
+    >
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="tech-icon"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 8v8M8 12h8" />
+      </svg>
+      <h3 className={""}>{text}</h3>
+    </div>
+  );
+};
 function SoftSkills() {
   const { language } = useContext(LanguageContext);
   return (

@@ -23,7 +23,7 @@ const proyects = [
       "Custom and attractive page to increase the coffee shop's reach.",
     pageLink: "https://samuel1390.github.io/Oak-Coffee/",
     codeSource: "https://github.com/Samuel1390/Oak-Coffee",
-    technologies: "",
+    technologies: "javascript",
   },
   {
     title: "Snow contrast",
@@ -36,7 +36,7 @@ const proyects = [
     typeDescriptionEn: "Color generator tool.",
     pageLink: "https://samuel1390.github.io/Snow-contrast/",
     codeSource: "https://github.com/Samuel1390/Snow-contrast",
-    technologies: "",
+    technologies: "javascript",
   },
   {
     title: "Shopping fest",
@@ -50,7 +50,7 @@ const proyects = [
     pageLink: "https://shopping-fest.vercel.app",
     codeSource:
       "https://github.com/Samuel1390/Shopping-fest-Ecommerce-in-react",
-    technologies: "react tailwind",
+    technologies: "javascript react tailwind",
   },
   {
     // new proyect
@@ -66,7 +66,7 @@ const proyects = [
       "Dijital game online store made with React with + Next.js framework.",
     pageLink: "https://snow-games-hacs.vercel.app",
     codeSource: "https://github.com/Samuel1390/snow-games",
-    technologies: "react tailwind",
+    technologies: "typescript react tailwind",
   },
 ];
 
