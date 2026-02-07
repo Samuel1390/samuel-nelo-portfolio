@@ -98,14 +98,14 @@
   }
   20% {
     color: var(--color-html);
-    border-color: currentColor;
-    filter: drop-shadow(0 0 12px currentColor);
+    border-color: var(--color-html);
+    filter: drop-shadow(0 0 12px var(--color-html));
     filter: drop-shadow(0 0 8px #fffa);
   }
   40% {
     color: var(--color-neutral-400);
     border-color: var(--color-neutral-400);
-    filter: drop-shadow(0 0 0 currentcolor);
+    filter: drop-shadow(0 0 0 var(--color-html));
   }
 }
 @keyframes css-icon {
@@ -113,15 +113,15 @@
   }
   20% {
     color: var(--color-css);
-    border-color: currentColor;
+    border-color: var(--color-css);
 
-    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 20px var(--color-css));
     filter: drop-shadow(0 0 8px #fffa);
   }
   40% {
     color: var(--color-neutral-400);
     border-color: var(--color-neutral-400);
-    filter: drop-shadow(0 0 0 currentcolor);
+    filter: drop-shadow(0 0 0 var(--color-css));
   }
 }
 @keyframes javascript-icon {
@@ -129,16 +129,16 @@
   }
   20% {
     color: var(--color-javascript);
-    border-color: currentColor;
+    border-color: var(--color-javascript);
 
-    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 20px var(--color-javascript));
     filter: drop-shadow(0 0 10px #fffa);
   }
   40% {
     color: var(--color-neutral-400);
 
     border-color: var(--color-neutral-400);
-    filter: drop-shadow(0 0 0 currentcolor);
+    filter: drop-shadow(0 0 0 var(--color-javascript));
   }
 }
 @keyframes react-icon {
@@ -146,16 +146,16 @@
   }
   20% {
     color: var(--color-react);
-    border-color: currentColor;
+    border-color: var(--color-react);
 
-    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 20px var(--color-react));
     filter: drop-shadow(0 0 10px #fffa);
   }
   40% {
     color: var(--color-neutral-400);
 
     border-color: var(--color-neutral-400);
-    filter: drop-shadow(0 0 0 currentcolor);
+    filter: drop-shadow(0 0 0 var(--color-react));
   }
 }
 @keyframes git-icon {
@@ -163,16 +163,16 @@
   }
   20% {
     color: var(--color-git);
-    border-color: currentColor;
+    border-color: var(--color-git);
 
-    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 20px var(--color-git));
     filter: drop-shadow(0 0 10px #fffa);
   }
   40% {
     color: var(--color-neutral-400);
 
     border-color: var(--color-neutral-400);
-    filter: drop-shadow(0 0 0 currentcolor);
+    filter: drop-shadow(0 0 0 var(--color-git));
   }
 }
 @keyframes github-icon {
@@ -180,16 +180,15 @@
   }
   20% {
     color: var(--color-github);
-    border-color: currentColor;
+    border-color: var(--color-github);
 
-    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 20px var(--color-github));
     filter: drop-shadow(0 0 10px #fffa);
   }
   40% {
     color: var(--color-neutral-400);
-
     border-color: var(--color-neutral-400);
-    filter: drop-shadow(0 0 0 currentcolor);
+    filter: drop-shadow(0 0 0 var(--color-github));
   }
 }
 @keyframes tailwind-icon {
@@ -197,16 +196,16 @@
   }
   20% {
     color: var(--color-tailwind);
-    border-color: currentColor;
+    border-color: var(--color-tailwind);
 
-    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 20px var(--color-tailwind));
     filter: drop-shadow(0 0 10px #fffa);
   }
   40% {
     color: var(--color-neutral-400);
 
     border-color: var(--color-neutral-400);
-    filter: drop-shadow(0 0 0 currentcolor);
+    filter: drop-shadow(0 0 0 var(--color-tailwind));
   }
 }
 @keyframes nextjs-icon {
@@ -214,15 +213,15 @@
   }
   20% {
     color: var(--color-nextjs);
-    border-color: currentColor;
+    border-color: var(--color-nextjs);
 
-    filter: drop-shadow(0 0 12px currentColor);
+    filter: drop-shadow(0 0 12px var(--color-nextjs));
     filter: drop-shadow(0 0 10px #fffa);
   }
   40% {
     color: var(--color-neutral-400);
 
     border-color: var(--color-neutral-400);
-    filter: drop-shadow(0 0 0 currentcolor);
+    filter: drop-shadow(0 0 0 var(--color-nextjs));
   }
 }
