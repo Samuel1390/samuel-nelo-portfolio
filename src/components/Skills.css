@@ -14,6 +14,7 @@
 }
 
 .tech-icon {
+  will-change: filter, color, border-color, background-color;
   fill: currentColor;
   width: 1.2rem;
   height: 1.2rem;
@@ -98,8 +99,8 @@
   20% {
     color: var(--color-html);
     border-color: currentColor;
-    filter: drop-shadow(0 0 20px currentColor);
-    filter: drop-shadow(0 0 10px #fffa);
+    filter: drop-shadow(0 0 12px currentColor);
+    filter: drop-shadow(0 0 8px #fffa);
   }
   40% {
     color: var(--color-neutral-400);
@@ -115,7 +116,7 @@
     border-color: currentColor;
 
     filter: drop-shadow(0 0 20px currentColor);
-    filter: drop-shadow(0 0 10px #fffa);
+    filter: drop-shadow(0 0 8px #fffa);
   }
   40% {
     color: var(--color-neutral-400);
@@ -215,7 +216,7 @@
     color: var(--color-nextjs);
     border-color: currentColor;
 
-    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 12px currentColor);
     filter: drop-shadow(0 0 10px #fffa);
   }
   40% {
