@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from "react";
 import { LanguageContext } from "./context/LanguageContext";
 import { Resend } from "resend";
-import handleSubmit from "./HandleSendMessage";
+import handleSubmit from "./HandleSendMessage.js";
 
 const ES_DEFAULT_MENSAGE =
   "¡Saludos!, me interesa tu perfil de desarrollador, mi nombre es [tu-nombre] espero nos podamos contactar muy pronto.";

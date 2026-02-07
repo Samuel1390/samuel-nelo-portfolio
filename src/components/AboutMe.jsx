@@ -27,7 +27,7 @@ export function AboutMe() {
   const { language } = useContext(LanguageContext);
   return (
     <>
-      <h2 className="text-center my-10 text-5xl font-lato text-neutral-100">
+      <h2 className="text-gradient text-center my-10 text-5xl font-lato text-neutral-100">
         {language === "spanish" ? "Acerca de mí" : "About me"}
       </h2>
       <div
@@ -41,7 +41,7 @@ export function AboutMe() {
       flex grow-{1} font-lato bg-(--dark-color3) h-full"
         >
           <section className="about-me-section">
-            <div className="about-imgs max-w-120 p-10 text-center">
+            <div className="about-text-container max-w-120 p-10 text-center">
               <div className="icon-div">
                 <h2 className="subtitle">
                   {language === "spanish" ? "Acerca de mí" : "About Me"}

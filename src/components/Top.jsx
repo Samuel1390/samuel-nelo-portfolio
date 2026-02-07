@@ -122,11 +122,11 @@ function QuickLinks() {
       <div className="grid-links grid m-auto grid-cols-2 gap-3 my-5">
         <a
           className="grid-link font-jost"
-          htmlFor="proyects-section"
-          href="#proyects-section"
+          htmlFor="projects-section"
+          href="#projects-section"
         >
           <div>
-            <h2>{language === "spanish" ? "Proyectos" : "Projects"}</h2>
+            <h2>{language === "spanish" ? "Projectos" : "Projects"}</h2>
             <svg
               className="icon ml-2.5"
               xmlns="http://www.w3.org/2000/svg"

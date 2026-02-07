@@ -1,30 +1,67 @@
+@import "tailwindcss";
+:root {
+  --color-html: #e34f26;
+  --color-css: #1572b6;
+  --color-javascript: #f7df1e;
+
+  --color-typescript: #3178c6;
+  --color-react: #61dafb;
+  --color-nextjs: #fafafa;
+  --color-tailwind: #06b6d4;
+
+  --color-git: #f05032;
+  --color-github: #fafafa;
+}
+
 .tech-icon {
-  fill: var(--live-color);
+  fill: currentColor;
   width: 1.2rem;
   height: 1.2rem;
   overflow: visible;
+  animation: icon-animation 0.8s ease-in both;
 }
 .icon-container {
   padding: 6px;
   gap: 6px;
   display: flex;
   align-items: center;
-  font-family: system-ui, -apple-system, "System UI";
+  font-family:
+    system-ui,
+    -apple-system,
+    "System UI";
   font-weight: bold;
   font-size: 0.9rem;
-  color: var(--live-color);
-  border: 2px solid var(--live-color);
+  background-color: var(--color-slate-950);
+  color: var(--color-neutral-400);
+  border: 2px solid var(--color-neutral-400);
   border-radius: 6px;
   flex-basis: 100px;
   flex-grow: 1;
 }
-.skills-flex {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  gap: 20px;
-  max-width: 790px;
-  margin: auto;
+/* svgs */
+.html {
+  animation: html-icon 4.4s ease-in 1s both infinite;
+}
+.css {
+  animation: css-icon 4.4s ease-in 1.3s both infinite;
+}
+.javascript {
+  animation: javascript-icon 4.4s ease-in 1.6s both infinite;
+}
+.git {
+  animation: git-icon 4.4s ease-in 1.9s both infinite;
+}
+.github {
+  animation: github-icon 4.4s ease-in 2.2s both infinite;
+}
+.tailwind {
+  animation: tailwind-icon 4.4s ease-in 2.5s both infinite;
+}
+.react {
+  animation: react-icon 4.4s ease-in 2.8s both infinite;
+}
+.nextjs {
+  animation: nextjs-icon 4.4s ease-in 3.1s both infinite;
 }
 .skill {
   flex-grow: 1;
@@ -34,11 +71,157 @@
   width: 100%;
   flex-wrap: wrap;
   padding: 30px 20px;
-  max-width: 400px;
 }
 .skills-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
+}
+@keyframes icon-animation {
+  0% {
+    transform: rotate(0);
+    scale: 1;
+  }
+  50% {
+    transform: rotate(15deg);
+    scale: 1.1;
+  }
+  100% {
+    transform: rotate(0);
+    scale: 1;
+  }
+}
+@keyframes html-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-html);
+    border-color: currentColor;
+    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 10px #fffa);
+  }
+  40% {
+    color: var(--color-neutral-400);
+    border-color: var(--color-neutral-400);
+    filter: drop-shadow(0 0 0 currentcolor);
+  }
+}
+@keyframes css-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-css);
+    border-color: currentColor;
+
+    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 10px #fffa);
+  }
+  40% {
+    color: var(--color-neutral-400);
+    border-color: var(--color-neutral-400);
+    filter: drop-shadow(0 0 0 currentcolor);
+  }
+}
+@keyframes javascript-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-javascript);
+    border-color: currentColor;
+
+    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 10px #fffa);
+  }
+  40% {
+    color: var(--color-neutral-400);
+
+    border-color: var(--color-neutral-400);
+    filter: drop-shadow(0 0 0 currentcolor);
+  }
+}
+@keyframes react-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-react);
+    border-color: currentColor;
+
+    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 10px #fffa);
+  }
+  40% {
+    color: var(--color-neutral-400);
+
+    border-color: var(--color-neutral-400);
+    filter: drop-shadow(0 0 0 currentcolor);
+  }
+}
+@keyframes git-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-git);
+    border-color: currentColor;
+
+    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 10px #fffa);
+  }
+  40% {
+    color: var(--color-neutral-400);
+
+    border-color: var(--color-neutral-400);
+    filter: drop-shadow(0 0 0 currentcolor);
+  }
+}
+@keyframes github-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-github);
+    border-color: currentColor;
+
+    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 10px #fffa);
+  }
+  40% {
+    color: var(--color-neutral-400);
+
+    border-color: var(--color-neutral-400);
+    filter: drop-shadow(0 0 0 currentcolor);
+  }
+}
+@keyframes tailwind-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-tailwind);
+    border-color: currentColor;
+
+    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 10px #fffa);
+  }
+  40% {
+    color: var(--color-neutral-400);
+
+    border-color: var(--color-neutral-400);
+    filter: drop-shadow(0 0 0 currentcolor);
+  }
+}
+@keyframes nextjs-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-nextjs);
+    border-color: currentColor;
+
+    filter: drop-shadow(0 0 20px currentColor);
+    filter: drop-shadow(0 0 10px #fffa);
+  }
+  40% {
+    color: var(--color-neutral-400);
+
+    border-color: var(--color-neutral-400);
+    filter: drop-shadow(0 0 0 currentcolor);
+  }
 }

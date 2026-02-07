@@ -23,6 +23,10 @@
   margin-top: 20px;
   overflow: hidden;
   position: relative;
+  margin-top: 0px;
+}
+.about-text-container {
+  margin-top: 0px;
 }
 .about-img {
   height: 100%;

@@ -1,64 +1,74 @@
 import {
+  IconContainer,
   HtmlSvg,
   JsSvg,
   CssSvg,
   ReactSvg,
   TailwindSvg,
   TypescriptSvg,
-} from "./Skills";
+} from "./Icons";
 import { FaCode } from "react-icons/fa";
 import { useContext } from "react";
 import { LanguageContext } from "./context/LanguageContext";
 import { FiCodesandbox } from "react-icons/fi";
 import "../globals.css";
 
-export function Proyects({ proyects }) {
+const ICONS = {
+  html: <HtmlSvg />,
+  css: <CssSvg />,
+  javascript: <JsSvg />,
+  react: <ReactSvg />,
+  tailwind: <TailwindSvg />,
+  typescript: <TypescriptSvg />,
+};
+
+export function Projects({ projects }) {
   const languageContext = useContext(LanguageContext);
   const { language } = languageContext;
   return (
     <section
-      id="proyects-section"
-      className="proyects-section flex items-center flex-col"
+      id="projects-section"
+      className="projects-section flex items-center flex-col"
     >
-      <div className="flex items-center  justify-center text-center p-2.5 gap-2.5">
-        <FaCode size={38} />
-        <h2 className="text-5xl text-neutral-100">
-          {language === "spanish" ? "Proyectos" : "Projects"}
+      <div className="flex items-center flex-col justify-center text-center p-2.5 gap-2.5">
+        <h2 className="text-gradient text-5xl  text-neutral-100">
+          {language === "spanish" ? "Projectos" : "Projects"}
         </h2>
+        <FaCode size={70} />
       </div>
-      <div className="proyects-container flex-wrap justify-center flex w-full p-4 gap-4">
-        {proyects.map((proyect) => {
+      <div className="projects-container flex-wrap justify-center flex w-full p-4 gap-4">
+        {projects.map((project) => {
           const {
             title,
             image,
-            proyectDescription,
-            proyectDescriptionEn,
+            projectDescription,
+            projectDescriptionEn,
             typeDescription,
             typeDescriptionEn,
             pageLink,
             codeSource,
             technologies,
-          } = proyect;
+          } = project;
           return (
             <div
-              key={title} // proyects section
-              className="proyect flex flex-col grow basis-44 max-w-70 bg-neutral-50 border-neutral-50 border gap-2"
+              key={title} // projects section
+              className="project flex flex-col grow basis-44 max-w-70 bg-neutral-50 border-neutral-50 border gap-2"
             >
-              <picture className="proyects-picture w-full h-40 overflow-hidden">
+              <picture className="projects-picture w-full h-40 overflow-hidden">
                 <img
                   loading="lazy"
-                  className="proyect-img size-full object-cover"
+                  className="project-img size-full object-cover"
                   src={image}
                   alt={`imagen de la página de ${
                     title + " " + language === "spanish"
-                      ? proyectDescription
-                      : proyectDescriptionEn
+                      ? projectDescription
+                      : projectDescriptionEn
                   }`}
                 />
               </picture>
               <div className="flex grow justify-between flex-col items-center">
                 <div className="p-2.5 font-lato">
-                  <div className="proyect-text flex flex-col">
+                  <div className="project-text flex flex-col">
                     <div>
                       <a
                         href={pageLink}
@@ -70,8 +80,8 @@ export function Proyects({ proyects }) {
                       </a>
                       <p className="text-slate-800 pt-4">
                         {language === "spanish"
-                          ? proyectDescription
-                          : proyectDescriptionEn}
+                          ? projectDescription
+                          : projectDescriptionEn}
                       </p>
                       <p className="text-[.9rem] my-4 text-slate-600">
                         {language === "spanish"
@@ -101,30 +111,13 @@ export function Proyects({ proyects }) {
                       <FiCodesandbox className="text-gray-900" />
                     </div>
                     <div className="skills-container">
-                      <HtmlSvg proyectIcon={true} />
-                      <CssSvg proyectIcon={true} />
-                      <JsSvg
-                        proyectIcon={true}
-                        hidden={
-                          technologies.includes("javascript") ? false : true
-                        }
-                      />
-                      <TailwindSvg
-                        proyectIcon={true}
-                        hidden={
-                          technologies.includes("tailwind") ? false : true
-                        }
-                      />
-                      <ReactSvg
-                        proyectIcon={true}
-                        hidden={technologies.includes("react") ? false : true}
-                      />
-                      <TypescriptSvg
-                        proyectIcon={true}
-                        hidden={
-                          technologies.includes("typescript") ? false : true
-                        }
-                      />
+                      {technologies.map((tech) => {
+                        return (
+                          <IconContainer projectIcon={true} name={tech}>
+                            {ICONS[tech]}
+                          </IconContainer>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
