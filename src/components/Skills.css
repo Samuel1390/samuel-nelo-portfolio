@@ -67,11 +67,11 @@
 .skill {
   flex-grow: 1;
   flex-basis: 200px;
-  border: 1px solid #fff7;
-  background-color: var(--dark-color3);
   width: 100%;
   flex-wrap: wrap;
   padding: 30px 20px;
+  background-color: #0f0f1fcc;
+  border-radius: 10px;
 }
 .skills-container {
   display: flex;
@@ -99,8 +99,8 @@
   20% {
     color: var(--color-html);
     border-color: var(--color-html);
-    filter: drop-shadow(0 0 12px var(--color-html));
-    filter: drop-shadow(0 0 8px #fffa);
+    box-shadow: 0 0 12px var(--color-html);
+    box-shadow: 0 0 10px #fffa;
   }
   40% {
     color: var(--color-neutral-400);
@@ -115,8 +115,8 @@
     color: var(--color-css);
     border-color: var(--color-css);
 
-    filter: drop-shadow(0 0 20px var(--color-css));
-    filter: drop-shadow(0 0 8px #fffa);
+    box-shadow: 0 0 12px var(--color-css);
+    box-shadow: 0 0 10px #fffa;
   }
   40% {
     color: var(--color-neutral-400);
@@ -131,8 +131,8 @@
     color: var(--color-javascript);
     border-color: var(--color-javascript);
 
-    filter: drop-shadow(0 0 20px var(--color-javascript));
-    filter: drop-shadow(0 0 10px #fffa);
+    box-shadow: 0 0 12px var(--color-javascript);
+    box-shadow: 0 0 10px #fffa;
   }
   40% {
     color: var(--color-neutral-400);
@@ -148,8 +148,8 @@
     color: var(--color-react);
     border-color: var(--color-react);
 
-    filter: drop-shadow(0 0 20px var(--color-react));
-    filter: drop-shadow(0 0 10px #fffa);
+    box-shadow: 0 0 12px var(--color-react);
+    box-shadow: 0 0 10px #fffa;
   }
   40% {
     color: var(--color-neutral-400);
@@ -165,8 +165,8 @@
     color: var(--color-git);
     border-color: var(--color-git);
 
-    filter: drop-shadow(0 0 20px var(--color-git));
-    filter: drop-shadow(0 0 10px #fffa);
+    box-shadow: 0 0 12px var(--color-git);
+    box-shadow: 0 0 10px #fffa;
   }
   40% {
     color: var(--color-neutral-400);
@@ -182,8 +182,8 @@
     color: var(--color-github);
     border-color: var(--color-github);
 
-    filter: drop-shadow(0 0 20px var(--color-github));
-    filter: drop-shadow(0 0 10px #fffa);
+    box-shadow: 0 0 12px var(--color-github);
+    box-shadow: 0 0 10px #fffa;
   }
   40% {
     color: var(--color-neutral-400);
@@ -198,8 +198,8 @@
     color: var(--color-tailwind);
     border-color: var(--color-tailwind);
 
-    filter: drop-shadow(0 0 20px var(--color-tailwind));
-    filter: drop-shadow(0 0 10px #fffa);
+    box-shadow: 0 0 12px var(--color-tailwind);
+    box-shadow: 0 0 10px #fffa;
   }
   40% {
     color: var(--color-neutral-400);
@@ -215,8 +215,8 @@
     color: var(--color-nextjs);
     border-color: var(--color-nextjs);
 
-    filter: drop-shadow(0 0 12px var(--color-nextjs));
-    filter: drop-shadow(0 0 10px #fffa);
+    box-shadow: 0 0 12px var(--color-nextjs);
+    box-shadow: 0 0 10px #fffa;
   }
   40% {
     color: var(--color-neutral-400);

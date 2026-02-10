@@ -2,12 +2,10 @@ import React from "react";
 
 const MathLevel = ({ language }) => {
   return (
-    <div className="row-span-2 p-6 border border-neutral-600">
-      <div className="rounded-md my-4 flex justify-center min-h-5 w-full bg-[url(https://wallpapers.com/images/hd/advanced-math-equations-pk8kxc3pvndyc1wz.jpg)]">
-        <h2 className="size-full p-4 bg-neutral-950/60 text-3xl font-bold">
-          {language === "spanish" ? "Nivel de matemáticas" : "Math level"}
-        </h2>
-      </div>
+    <div className="skill row-span-2 p-6 ">
+      <h2 className=" p-4 text-3xl font-bold">
+        {language === "spanish" ? "Nivel de matemáticas" : "Math level"}
+      </h2>
       {language === "spanish" ? (
         <MathLevelParagraphEs />
       ) : (

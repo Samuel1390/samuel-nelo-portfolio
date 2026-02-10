@@ -37,7 +37,7 @@ const TechSkills = () => {
         <PiGraphBold size={28} />
         <h2 className="subtitle">
           {language === "spanish"
-            ? "Todas tecnologías y herramientas"
+            ? "Tecnologías y herramientas"
             : "All technologies and tools"}
         </h2>
       </div>

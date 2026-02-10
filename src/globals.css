@@ -48,7 +48,7 @@ body {
   padding: 0;
   margin: 0;
   color: var(--foreground);
-  background-color: var(--color-gray-800);
+  background-color: #102030;
   font-family: Arial, Helvetica, sans-serif;
   width: 100vw;
   overflow-x: hidden;
@@ -183,6 +183,23 @@ body {
   box-shadow: 0 0 15px #000a;
   transition: box-shadow opacity;
 }
+.appear {
+  animation: appear linear both;
+  animation-timeline: view(block);
+  animation-range: cover 0% contain 50%;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
 @media screen and (max-width: 700px) {
   .container {
     width: 200px;

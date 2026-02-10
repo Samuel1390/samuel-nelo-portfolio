@@ -136,12 +136,18 @@ export const NextSvg = ({ className = "tech-icon" }) => {
       className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="64" cy="64" r="64" fill="currentColor" />
+      <circle cx="64" cy="64" r="64" fill="none" />
       <path
         d="M106.632 113.88L45.459 34.004H34.004V93.996H40.755V44.475L94.576 115.11C98.815 112.596 102.847 109.588 106.632 106.12V113.88Z"
-        fill="#000"
+        fill="currentColor"
       />
-      <rect x="87.245" y="34.004" width="6.751" height="59.992" fill="#000" />
+      <rect
+        x="87.245"
+        y="34.004"
+        width="6.751"
+        height="59.992"
+        fill="currentColor"
+      />
     </svg>
   );
 };

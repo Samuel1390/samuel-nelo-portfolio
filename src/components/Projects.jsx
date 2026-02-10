@@ -6,6 +6,7 @@ import {
   ReactSvg,
   TailwindSvg,
   TypescriptSvg,
+  NextSvg,
 } from "./Icons";
 import { FaCode } from "react-icons/fa";
 import { useContext } from "react";
@@ -20,6 +21,7 @@ const ICONS = {
   react: <ReactSvg />,
   tailwind: <TailwindSvg />,
   typescript: <TypescriptSvg />,
+  nextjs: <NextSvg />,
 };
 
 export function Projects({ projects }) {
@@ -32,7 +34,7 @@ export function Projects({ projects }) {
     >
       <div className="flex items-center flex-col justify-center text-center p-2.5 gap-2.5">
         <h2 className="text-gradient text-5xl  text-neutral-100">
-          {language === "spanish" ? "Projectos" : "Projects"}
+          {language === "spanish" ? "Proyectos" : "Projects"}
         </h2>
         <FaCode size={70} />
       </div>

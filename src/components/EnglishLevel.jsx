@@ -1,13 +1,11 @@
 const EnglishLevel = ({ language }) => {
   return (
-    <div className="row-span-2 p-6 border border-neutral-600">
-      <div className="rounded-md my-4 flex justify-center min-h-20 w-full bg-[url(https://media.istockphoto.com/id/1678139897/es/vector/ingl%C3%A9s.jpg?s=612x612&w=0&k=20&c=Yw4MZ0KUw5ngcAenvlAX__LM_cR6o4IGL5wiYc0w2QQ=)]">
-        <h2 className="size-full p-4 bg-neutral-950/60 text-3xl font-bold">
-          {language === "spanish"
-            ? "Nivel de inglés (intermedio)"
-            : "English level (intermediate)"}
-        </h2>
-      </div>
+    <div className="skill row-span-2 p-6">
+      <h2 className=" p-4  text-3xl font-bold">
+        {language === "spanish"
+          ? "Nivel de inglés (intermedio)"
+          : "English level (intermediate)"}
+      </h2>
       {language === "spanish" ? (
         <LevelEnglishParagraphEs />
       ) : (
