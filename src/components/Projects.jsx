@@ -45,7 +45,7 @@ export function Projects({ projects }) {
       <div className="flex items-center flex-col justify-center text-center p-2.5 gap-2.5">
         <h2
           ref={refTitle}
-          className={`text-gradient text-5xl  text-neutral-100 ${titleIsVisible ? "fade-in-down" : "opacity-0"}`}
+          className={`text-gradient text-5xl  text-neutral-100 ${titleIsVisible ? "animate-fade-in-down" : "opacity-0"}`}
         >
           {language === "spanish" ? "Proyectos" : "Projects"}
         </h2>
@@ -53,7 +53,7 @@ export function Projects({ projects }) {
       </div>
       <div
         ref={refProject}
-        className={`projects-container flex-wrap justify-center flex w-full p-4 gap-4 ${projectIsVisible ? "slide-left" : "opacity-0"}`}
+        className={`projects-container flex-wrap justify-center flex w-full p-4 gap-4 ${projectIsVisible ? "animate-fade-in-up" : "opacity-0"}`}
       >
         {projects.map((project) => {
           const {

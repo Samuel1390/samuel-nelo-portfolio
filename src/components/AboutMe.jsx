@@ -24,15 +24,19 @@ const paragraphs = {
 };
 
 export function AboutMe() {
-  const [refContainer, containerIsVisible] = useIntersectionObserver();
-  const [refTitle, titleIsVisible] = useIntersectionObserver();
+  const [refContainer, containerIsVisible] = useIntersectionObserver({
+    threshold: 0.2,
+  });
+  const [refTitle, titleIsVisible] = useIntersectionObserver({
+    threshold: 0.2,
+  });
   const { language } = useContext(LanguageContext);
   return (
     <>
       <h2
         ref={refTitle}
         className={`text-gradient text-center my-10 text-5xl font-lato
-          text-neutral-100 ${titleIsVisible ? "fade-in-down" : "opacity-0"}`}
+          text-neutral-100 ${titleIsVisible ? "animate-fade-in-down" : "opacity-0"}`}
       >
         {language === "spanish" ? "Acerca de mí" : "About me"}
       </h2>
@@ -41,7 +45,7 @@ export function AboutMe() {
         id="about-me-section"
         className={`
     place-content-center p-0
-    flex justify-center ${containerIsVisible ? "fade-in-top" : "opacity-0"} `}
+    flex justify-center ${containerIsVisible ? "animate-fade-in-up" : "opacity-0"} `}
       >
         <div
           className="about-section border border-solid border-[--light-color]

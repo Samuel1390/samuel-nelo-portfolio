@@ -16,7 +16,7 @@ export function Skills() {
       <div className="flex items-center flex-col justify-center text-center p-2.5 gap-2.5">
         <h2
           ref={ref}
-          className={`text-gradient text-5xl text-neutral-100 ${isVisible ? "fade-in-down" : "opacity-0"}`}
+          className={`text-gradient text-5xl text-neutral-100 ${isVisible ? "animate-fade-in-down" : "opacity-0"}`}
         >
           {language === "spanish" ? "Habilidades" : "Skills"}
         </h2>

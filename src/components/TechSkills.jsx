@@ -31,11 +31,11 @@ const ICONS = {
 
 const TechSkills = () => {
   const { language } = useContext(LanguageContext);
-  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
+  const [ref, isVisible] = useIntersectionObserver();
   return (
     <div
       ref={ref}
-      className={`skill skill ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+      className={`skill ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
     >
       <div className="skill-title flex gap-2.5 items-center justify-center">
         <PiGraphBold size={28} />
