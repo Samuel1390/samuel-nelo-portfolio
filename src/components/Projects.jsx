@@ -53,7 +53,7 @@ export function Projects({ projects }) {
       </div>
       <div
         ref={refProject}
-        className="projects-container flex-wrap justify-center flex w-full p-4 gap-4"
+        className={`projects-container flex-wrap justify-center flex w-full p-4 gap-4 ${projectIsVisible ? "slide-left" : "opacity-0"}`}
       >
         {projects.map((project) => {
           const {
@@ -74,7 +74,7 @@ export function Projects({ projects }) {
             <div
               key={title} // projects section
               className={`project flex flex-col grow basis-44 max-w-70 bg-neutral-50 border-neutral-50 border gap-2
-                ${projectIsVisible ? "fade-in-down" : "opacity-0"}
+                
                 `}
             >
               <picture className="projects-picture w-full h-40 overflow-hidden">

@@ -69,7 +69,7 @@ export const Top = () => {
         <ProfilePicture />
       </section>
       <div className="arrow-down">
-        <ArrowDownIcon width={52} />
+        <ArrowDownIcon width={40} />
       </div>
     </>
   );
