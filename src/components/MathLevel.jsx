@@ -1,8 +1,12 @@
 import React from "react";
-
+import { useIntersectionObserver } from "./hooks/useIntersectionObserver";
 const MathLevel = ({ language }) => {
+  const [ref, isVisible] = useIntersectionObserver();
   return (
-    <div className="skill row-span-2 p-6 ">
+    <div
+      ref={ref}
+      className={`skill row-span-2 p-6 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+    >
       <h2 className=" p-4 text-3xl font-bold">
         {language === "spanish" ? "Nivel de matemáticas" : "Math level"}
       </h2>

@@ -4,15 +4,21 @@ import { LanguageContext } from "./context/LanguageContext";
 import { IoMicSharp } from "react-icons/io5";
 import { VscDebug } from "react-icons/vsc";
 import { FaHandsHelping } from "react-icons/fa";
-import { MdLanguage } from "react-icons/md";
+import { MdLanguage, MdOpacity } from "react-icons/md";
 import { RiLightbulbFlashLine } from "react-icons/ri";
+import { useIntersectionObserver } from "./hooks/useIntersectionObserver";
 
 import { TbMathIntegral } from "react-icons/tb";
 
 const SoftSkills = () => {
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
+
   const { language } = useContext(LanguageContext);
   return (
-    <div className="skill">
+    <div
+      ref={ref}
+      className={`skill ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+    >
       <div className="skill-title gap-2.5 flex justify-center items-center">
         <FaHandsHelping size={28} />
         <h2 className="subtitle">
@@ -23,7 +29,7 @@ const SoftSkills = () => {
       </div>
       <div className="skills-container">
         <div className="skills-container">
-          <div className="icon-container">
+          <div className="icon-container soft-skill">
             <IoMicSharp size={26} />
             <h3>
               {language === "spanish"
@@ -31,7 +37,7 @@ const SoftSkills = () => {
                 : "Public speaking and effective communication"}
             </h3>
           </div>
-          <div className="icon-container">
+          <div className="icon-container soft-skill ">
             <MdLanguage size={26} />
             <h3>
               {language === "spanish"
@@ -39,7 +45,7 @@ const SoftSkills = () => {
                 : "English (intermediate)"}
             </h3>
           </div>
-          <div className="icon-container">
+          <div className="icon-container soft-skill">
             <VscDebug size={26} />
             <h3>
               {language === "spanish"
@@ -47,7 +53,7 @@ const SoftSkills = () => {
                 : "problem solving"}
             </h3>
           </div>
-          <div className="icon-container">
+          <div className="icon-container soft-skill">
             <RiLightbulbFlashLine size={26} />
             <h3>
               {language === "spanish"
@@ -55,7 +61,7 @@ const SoftSkills = () => {
                 : "Creativity and innovation"}
             </h3>
           </div>
-          <div className="icon-container">
+          <div className="icon-container soft-skill">
             <TbMathIntegral size={26} />
             <h3>
               {language === "spanish"

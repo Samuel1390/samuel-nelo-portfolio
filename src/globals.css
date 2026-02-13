@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @tailwind utilities;
+@import "tailwind-animations";
 :root {
   --background: #161616;
   --foreground: #eee;
@@ -134,6 +135,12 @@ body {
   font-weight: bold;
   background-color: transparent;
 }
+.project-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
 .dash {
   @apply bg-amber-950 text-purple-50
   hover:bg-emerald-500 hover:font-bold p-6;
@@ -183,20 +190,20 @@ body {
   box-shadow: 0 0 15px #000a;
   transition: box-shadow opacity;
 }
-.appear {
-  animation: appear linear both;
-  animation-timeline: view(block);
-  animation-range: cover 0% contain 50%;
+.arrow-down {
+  width: fit-content;
+  margin: 2rem auto;
+  animation: vertical-bounce;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
-
-@keyframes appear {
+@keyframes vertical-bounce {
   0% {
-    opacity: 0;
     transform: translateY(10px);
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
+  50% {
+    transform: translateY(0);
   }
 }
 

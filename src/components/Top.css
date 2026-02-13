@@ -93,6 +93,7 @@ section > div:first-child {
   color: var(--light-color);
   padding: 20px;
   font-size: 1.3rem;
+  text-align: center;
   border: 1px solid var(--light-color);
   position: relative;
   transition: scale;

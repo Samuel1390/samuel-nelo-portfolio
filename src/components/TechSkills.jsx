@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-
+import { useIntersectionObserver } from "./hooks/useIntersectionObserver";
 import { LanguageContext } from "./context/LanguageContext";
 
 import {
@@ -31,8 +31,12 @@ const ICONS = {
 
 const TechSkills = () => {
   const { language } = useContext(LanguageContext);
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
   return (
-    <div className="skill">
+    <div
+      ref={ref}
+      className={`skill skill ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+    >
       <div className="skill-title flex gap-2.5 items-center justify-center">
         <PiGraphBold size={28} />
         <h2 className="subtitle">

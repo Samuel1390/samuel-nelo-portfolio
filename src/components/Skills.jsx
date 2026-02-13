@@ -2,6 +2,7 @@ import "./Skills.css";
 import "../globals.css";
 import SoftSkills from "./SoftSkills";
 import EnglishLevel from "./EnglishLevel";
+import { useIntersectionObserver } from "./hooks/useIntersectionObserver";
 
 import { LanguageContext } from "./context/LanguageContext";
 import { useContext } from "react";
@@ -9,10 +10,14 @@ import MathLevel from "./MathLevel";
 import TechSkills from "./TechSkills";
 export function Skills() {
   const { language } = useContext(LanguageContext);
+  const [ref, isVisible] = useIntersectionObserver();
   return (
     <section id="skills-section" className="skills-section font-lato my-10">
       <div className="flex items-center flex-col justify-center text-center p-2.5 gap-2.5">
-        <h2 className="text-gradient text-5xl text-neutral-100">
+        <h2
+          ref={ref}
+          className={`text-gradient text-5xl text-neutral-100 ${isVisible ? "fade-in-down" : "opacity-0"}`}
+        >
           {language === "spanish" ? "Habilidades" : "Skills"}
         </h2>
         <svg

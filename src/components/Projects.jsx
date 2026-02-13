@@ -13,6 +13,7 @@ import { useContext } from "react";
 import { LanguageContext } from "./context/LanguageContext";
 import { FiCodesandbox } from "react-icons/fi";
 import "../globals.css";
+import { useIntersectionObserver } from "./hooks/useIntersectionObserver";
 
 const ICONS = {
   html: <HtmlSvg />,
@@ -23,9 +24,18 @@ const ICONS = {
   typescript: <TypescriptSvg />,
   nextjs: <NextSvg />,
 };
+function getTagStyles(color) {
+  return {
+    color: color,
+    backgroundColor: "#01010299",
+    borderColor: color,
+  };
+}
 
 export function Projects({ projects }) {
   const languageContext = useContext(LanguageContext);
+  const [refTitle, titleIsVisible] = useIntersectionObserver();
+  const [refProject, projectIsVisible] = useIntersectionObserver();
   const { language } = languageContext;
   return (
     <section
@@ -33,12 +43,18 @@ export function Projects({ projects }) {
       className="projects-section flex items-center flex-col"
     >
       <div className="flex items-center flex-col justify-center text-center p-2.5 gap-2.5">
-        <h2 className="text-gradient text-5xl  text-neutral-100">
+        <h2
+          ref={refTitle}
+          className={`text-gradient text-5xl  text-neutral-100 ${titleIsVisible ? "fade-in-down" : "opacity-0"}`}
+        >
           {language === "spanish" ? "Proyectos" : "Projects"}
         </h2>
         <FaCode size={70} />
       </div>
-      <div className="projects-container flex-wrap justify-center flex w-full p-4 gap-4">
+      <div
+        ref={refProject}
+        className="projects-container flex-wrap justify-center flex w-full p-4 gap-4"
+      >
         {projects.map((project) => {
           const {
             title,
@@ -50,11 +66,16 @@ export function Projects({ projects }) {
             pageLink,
             codeSource,
             technologies,
+            tags,
           } = project;
+          const tagsDefined =
+            language === "spanish" ? tags.tagsEs : tags.tagsEn;
           return (
             <div
               key={title} // projects section
-              className="project flex flex-col grow basis-44 max-w-70 bg-neutral-50 border-neutral-50 border gap-2"
+              className={`project flex flex-col grow basis-44 max-w-70 bg-neutral-50 border-neutral-50 border gap-2
+                ${projectIsVisible ? "fade-in-down" : "opacity-0"}
+                `}
             >
               <picture className="projects-picture w-full h-40 overflow-hidden">
                 <img
@@ -70,7 +91,7 @@ export function Projects({ projects }) {
               </picture>
               <div className="flex grow justify-between flex-col items-center">
                 <div className="p-2.5 font-lato">
-                  <div className="project-text flex flex-col">
+                  <div className="project-text">
                     <div>
                       <a
                         href={pageLink}
@@ -80,6 +101,21 @@ export function Projects({ projects }) {
                       >
                         {title}
                       </a>
+                      <div className="flex gap-2 py-1">
+                        {tagsDefined.map((tag) => {
+                          return (
+                            <h3
+                              key={title + tag.name}
+                              style={getTagStyles(tag.color)}
+                              className={
+                                "w-fit font-bold border rounded-full px-2"
+                              }
+                            >
+                              {tag.name}
+                            </h3>
+                          );
+                        })}
+                      </div>
                       <p className="text-slate-800 pt-4">
                         {language === "spanish"
                           ? projectDescription

@@ -10,7 +10,7 @@ export function ProfilePicture() {
   const openKey = "<";
   return (
     <>
-      <div className="container profile-picture">
+      <div className="container profile-picture animate-fade-in-up">
         <div className="code code-1 font-geist-mono">
           <div>
             <span style={{ color: "var(--andromeda-purple)" }}>

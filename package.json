@@ -12,6 +12,7 @@
   "dependencies": {
     "@chakra-ui/react": "^3.31.0",
     "@emotion/react": "^11.14.0",
+    "@heroicons/react": "^2.2.0",
     "@react-email/components": "^1.0.4",
     "@react-email/render": "^2.0.2",
     "@tailwindcss/vite": "^4.1.18",
@@ -21,6 +22,7 @@
     "resend": "^6.7.0",
     "styled-components": "^6.3.8",
     "sweetalert2": "^11.26.18",
+    "tailwind-animations": "^1.0.1",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {

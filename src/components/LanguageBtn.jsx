@@ -14,7 +14,7 @@ export const LanguageBtn = () => {
     saveLan(e.target.value);
   };
   return (
-    <div className="language-btn-container">
+    <div className="language-btn-container animate-swing-drop-in">
       <button
         className={`language-btn ${language === "spanish" ? "active" : ""}`}
         onClick={(e) => handleLanguageClick(e)}

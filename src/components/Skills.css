@@ -13,6 +13,17 @@
   --color-github: #fafafa;
 }
 
+.icon-container.soft-skill {
+  animation: github-icon 4s ease-in both infinite;
+}
+.icon-container.soft-skill:nth-child(3),
+.icon-container.soft-skill:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.icon-container.soft-skill:nth-child(5),
+.icon-container.soft-skill:nth-child(6) {
+  animation-delay: 0.8s;
+}
 .tech-icon {
   will-change: filter, color, border-color, background-color;
   fill: currentColor;
@@ -41,28 +52,28 @@
 }
 /* svgs */
 .html {
-  animation: html-icon 4.4s ease-in 1s both infinite;
+  animation: html-icon 4s ease-in 1s both infinite;
 }
 .css {
-  animation: css-icon 4.4s ease-in 1.3s both infinite;
+  animation: css-icon 4s ease-in 1.3s both infinite;
 }
 .javascript {
-  animation: javascript-icon 4.4s ease-in 1.6s both infinite;
+  animation: javascript-icon 4s ease-in 1.6s both infinite;
 }
 .git {
-  animation: git-icon 4.4s ease-in 1.9s both infinite;
+  animation: git-icon 4s ease-in 1.9s both infinite;
 }
 .github {
-  animation: github-icon 4.4s ease-in 2.2s both infinite;
+  animation: github-icon 4s ease-in 2.2s both infinite;
 }
 .tailwind {
-  animation: tailwind-icon 4.4s ease-in 2.5s both infinite;
+  animation: tailwind-icon 4s ease-in 2.5s both infinite;
 }
 .react {
-  animation: react-icon 4.4s ease-in 2.8s both infinite;
+  animation: react-icon 4s ease-in 2.8s both infinite;
 }
 .nextjs {
-  animation: nextjs-icon 4.4s ease-in 3.1s both infinite;
+  animation: nextjs-icon 4s ease-in 3.1s both infinite;
 }
 .skill {
   flex-grow: 1;
@@ -101,11 +112,13 @@
     border-color: var(--color-html);
     box-shadow: 0 0 12px var(--color-html);
     box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
   }
   40% {
     color: var(--color-neutral-400);
     border-color: var(--color-neutral-400);
     filter: drop-shadow(0 0 0 var(--color-html));
+    scale: 1;
   }
 }
 @keyframes css-icon {
@@ -117,11 +130,13 @@
 
     box-shadow: 0 0 12px var(--color-css);
     box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
   }
   40% {
     color: var(--color-neutral-400);
     border-color: var(--color-neutral-400);
     filter: drop-shadow(0 0 0 var(--color-css));
+    scale: 1;
   }
 }
 @keyframes javascript-icon {
@@ -133,11 +148,13 @@
 
     box-shadow: 0 0 12px var(--color-javascript);
     box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
   }
   40% {
     color: var(--color-neutral-400);
 
     border-color: var(--color-neutral-400);
+    scale: 1;
     filter: drop-shadow(0 0 0 var(--color-javascript));
   }
 }
@@ -150,11 +167,13 @@
 
     box-shadow: 0 0 12px var(--color-react);
     box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
   }
   40% {
     color: var(--color-neutral-400);
 
     border-color: var(--color-neutral-400);
+    scale: 1;
     filter: drop-shadow(0 0 0 var(--color-react));
   }
 }
@@ -167,11 +186,13 @@
 
     box-shadow: 0 0 12px var(--color-git);
     box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
   }
   40% {
     color: var(--color-neutral-400);
 
     border-color: var(--color-neutral-400);
+    scale: 1;
     filter: drop-shadow(0 0 0 var(--color-git));
   }
 }
@@ -184,11 +205,13 @@
 
     box-shadow: 0 0 12px var(--color-github);
     box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
   }
   40% {
     color: var(--color-neutral-400);
     border-color: var(--color-neutral-400);
     filter: drop-shadow(0 0 0 var(--color-github));
+    scale: 1;
   }
 }
 @keyframes tailwind-icon {
@@ -200,11 +223,13 @@
 
     box-shadow: 0 0 12px var(--color-tailwind);
     box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
   }
   40% {
     color: var(--color-neutral-400);
 
     border-color: var(--color-neutral-400);
+    scale: 1;
     filter: drop-shadow(0 0 0 var(--color-tailwind));
   }
 }
@@ -217,11 +242,13 @@
 
     box-shadow: 0 0 12px var(--color-nextjs);
     box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
   }
   40% {
     color: var(--color-neutral-400);
 
     border-color: var(--color-neutral-400);
+    scale: 1;
     filter: drop-shadow(0 0 0 var(--color-nextjs));
   }
 }

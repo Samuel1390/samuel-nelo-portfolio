@@ -2,7 +2,7 @@ import { FaGraduationCap } from "react-icons/fa6";
 import { TbTargetArrow } from "react-icons/tb";
 import { IoPerson } from "react-icons/io5";
 import { LanguageContext } from "./context/LanguageContext";
-
+import { useIntersectionObserver } from "./hooks/useIntersectionObserver";
 import myImage from "../assets/sam-nelo.jpeg";
 import { useContext } from "react";
 import "../globals.css";
@@ -24,17 +24,24 @@ const paragraphs = {
 };
 
 export function AboutMe() {
+  const [refContainer, containerIsVisible] = useIntersectionObserver();
+  const [refTitle, titleIsVisible] = useIntersectionObserver();
   const { language } = useContext(LanguageContext);
   return (
     <>
-      <h2 className="text-gradient text-center my-10 text-5xl font-lato text-neutral-100">
+      <h2
+        ref={refTitle}
+        className={`text-gradient text-center my-10 text-5xl font-lato
+          text-neutral-100 ${titleIsVisible ? "fade-in-down" : "opacity-0"}`}
+      >
         {language === "spanish" ? "Acerca de mí" : "About me"}
       </h2>
       <div
-        id="about-section"
-        className="
+        ref={refContainer}
+        id="about-me-section"
+        className={`
     place-content-center p-0
-    flex justify-center"
+    flex justify-center ${containerIsVisible ? "fade-in-top" : "opacity-0"} `}
       >
         <div
           className="about-section border border-solid border-[--light-color]

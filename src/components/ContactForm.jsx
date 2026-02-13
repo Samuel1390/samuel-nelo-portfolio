@@ -81,7 +81,7 @@ const ContactForm = () => {
           />
         </svg>
         <h2 className="font-bold text-xl w-full text-center">
-          {language ? "Contáctame" : "Contact me"}
+          {language === "spanish" ? "Contáctame" : "Contact me"}
         </h2>
         <div className="flex flex-col">
           <label className="self-start" htmlFor="email">
