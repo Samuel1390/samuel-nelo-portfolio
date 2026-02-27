@@ -1,5 +1,4 @@
 import snowGamesImage from "./public/snow-games.png";
-import shoppingFestImage from "./public/shopping-fest.png";
 import snowContrastImage from "./public/project-snow-contrast.png";
 import oakCoffeeImage from "./public/project-okc.png";
 
@@ -41,21 +40,29 @@ const projects = [
     },
   },
   {
-    title: "Shopping fest",
-    image: shoppingFestImage,
+    title: "Snow animations",
+    image:
+      "https://github.com/Samuel1390/snow-animations/blob/main/public/og-image.png?raw=true",
     projectDescription:
-      "Tienda online con productos de hogar, cosméticos, alimentos y más.",
+      "Animaciones de CSS listas para usar, dale vida a tu aplicación con estas animaciones, copia-pega y disfruta.",
     projectDescriptionEn:
-      "Online store with home products, cosmetics, food, and more.",
-    typeDescription: "E-commerce (tienda online) hecha con react vite.",
-    typeDescriptionEn: "E-commerce (online store) made with React Vite.",
-    pageLink: "https://shopping-fest.vercel.app",
-    codeSource:
-      "https://github.com/Samuel1390/Shopping-fest-Ecommerce-in-react",
-    technologies: ["html", "css", "javascript", "react", "tailwind"],
+      "Ready-to-use CSS animations to bring life to your application. Copy-paste and enjoy.",
+    typeDescription:
+      "Proyecto de animaciones de CSS abierto a colaboraciones de la comunidad hecho en Next.js + TypeScript.",
+    typeDescriptionEn:
+      "Project of CSS animations open to community collaborations made in Next.js + TypeScript.",
+    pageLink: "https://snow-animations.vercel.app",
+    codeSource: "https://github.com/Samuel1390/snow-animations",
+    technologies: ["html", "css", "typescript", "react", "tailwind", "next.js"],
     tags: {
-      tagsEn: [{ name: "App in development", color: "#FFFF00" }],
-      tagsEs: [{ name: "Página aún en desarrollo", color: "#FFFF00" }],
+      tagsEn: [
+        { name: "App open to contributions", color: "#99ffaa" },
+        { name: "Favorite project", color: "#ffff22" },
+      ],
+      tagsEs: [
+        { name: "Aplicación abierta a contribuciones", color: "#99ffaa" },
+        { name: "Proyecto favorito", color: "#ffff22" },
+      ],
     },
   },
   {
@@ -72,7 +79,7 @@ const projects = [
       "Dijital game online store made with React + Next.js framework.",
     pageLink: "https://snow-games-hacs.vercel.app",
     codeSource: "https://github.com/Samuel1390/snow-games",
-    technologies: ["html", "css", "typescript", "react", "tailwind", "nextjs"],
+    technologies: ["html", "css", "typescript", "react", "tailwind", "next.js"],
     tags: {
       tagsEn: [{ name: "Most recent app", color: "#60a5fa" }],
       tagsEs: [{ name: "Página mas reciente", color: "#60a5fa" }],

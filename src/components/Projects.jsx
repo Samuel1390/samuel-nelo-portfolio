@@ -53,7 +53,7 @@ export function Projects({ projects }) {
       </div>
       <div
         ref={refProject}
-        className={`projects-container flex-wrap justify-center flex w-full p-4 gap-4 ${projectIsVisible ? "animate-fade-in-up" : "opacity-0"}`}
+        className={`projects-container flex-wrap justify-center flex w-full p-7 gap-7 ${projectIsVisible ? "animate-fade-in-up" : "opacity-0"}`}
       >
         {projects.map((project) => {
           const {
@@ -73,11 +73,11 @@ export function Projects({ projects }) {
           return (
             <div
               key={title} // projects section
-              className={`project flex flex-col grow basis-44 max-w-70 bg-neutral-50 border-neutral-50 border gap-2
+              className={`project flex flex-col grow basis-100 bg-neutral-50 border-neutral-50 border gap-2
                 
                 `}
             >
-              <picture className="projects-picture w-full h-40 overflow-hidden">
+              <picture className="projects-picture min-h-50 w-full h-40 overflow-hidden">
                 <img
                   loading="lazy"
                   className="project-img size-full object-cover"
@@ -89,75 +89,71 @@ export function Projects({ projects }) {
                   }`}
                 />
               </picture>
-              <div className="flex grow justify-between flex-col items-center">
-                <div className="p-2.5 font-lato">
-                  <div className="project-text">
-                    <div>
-                      <a
-                        href={pageLink}
-                        rel="noopener"
-                        target="_blank"
-                        className="hover:text-sky-400 my-8 text-sky-700 underline text-3xl font-semibold"
-                      >
-                        {title}
-                      </a>
-                      <div className="flex gap-2 py-1">
-                        {tagsDefined.map((tag) => {
-                          return (
-                            <h3
-                              key={title + tag.name}
-                              style={getTagStyles(tag.color)}
-                              className={
-                                "w-fit font-bold border rounded-full px-2"
-                              }
-                            >
-                              {tag.name}
-                            </h3>
-                          );
-                        })}
-                      </div>
-                      <p className="text-slate-800 pt-4">
-                        {language === "spanish"
-                          ? projectDescription
-                          : projectDescriptionEn}
-                      </p>
-                      <p className="text-[.9rem] my-4 text-slate-600">
-                        {language === "spanish"
-                          ? typeDescription
-                          : typeDescriptionEn}
-                      </p>
-                    </div>
-                    <span className="bg-teal-400/50 px-2 py-2 rounded-sm text-zinc-950 border-teal-950 border-l-4">
-                      {language === "spanish" ? "Ir al " : "go to the "}
-                      <a
-                        className="ml-1 text-teal-950 underline font-bold"
-                        href={codeSource}
-                        rel="noopener"
-                        target="_blank"
-                      >
-                        {language === "spanish" ? "repositorio" : "repository"}
-                      </a>
-                    </span>
-                  </div>
-                  <div className="flex items-center flex-col text-center p-2.5 gap-2">
-                    <div className="gap-4 flex items-center justify-center">
-                      <h2 className="text-2xl font-bold text-zinc-900">
-                        {language === "spanish"
-                          ? "Tecnologías"
-                          : "Technologies"}
-                      </h2>
-                      <FiCodesandbox className="text-gray-900" />
-                    </div>
-                    <div className="skills-container">
-                      {technologies.map((tech) => {
+              <div className="flex grow p-2.5 font-lato justify-between h-full  flex-col items-center">
+                <div className="project-text">
+                  <div>
+                    <a
+                      href={pageLink}
+                      rel="noopener"
+                      target="_blank"
+                      className="hover:text-sky-400 my-8 text-sky-700 underline text-3xl font-semibold"
+                    >
+                      {title}
+                    </a>
+                    <div className="flex gap-2 flex-wrap py-1">
+                      {tagsDefined.map((tag) => {
                         return (
-                          <IconContainer projectIcon={true} name={tech}>
-                            {ICONS[tech]}
-                          </IconContainer>
+                          <h3
+                            key={title + tag.name}
+                            style={getTagStyles(tag.color)}
+                            className={
+                              "w-fit text-center border rounded-full px-1"
+                            }
+                          >
+                            {tag.name}
+                          </h3>
                         );
                       })}
                     </div>
+                    <p className="text-slate-800 pt-4">
+                      {language === "spanish"
+                        ? projectDescription
+                        : projectDescriptionEn}
+                    </p>
+                    <p className="text-[.9rem] my-4 text-slate-600">
+                      {language === "spanish"
+                        ? typeDescription
+                        : typeDescriptionEn}
+                    </p>
                   </div>
+                  <div className="gap-4 flex items-center justify-center">
+                    <h2 className="text-2xl font-bold text-zinc-900">
+                      {language === "spanish" ? "Tecnologías" : "Technologies"}
+                    </h2>
+                    <FiCodesandbox className="text-gray-900" />
+                  </div>
+                  <div className="skills-container">
+                    {technologies.map((tech) => {
+                      return (
+                        <IconContainer projectIcon={true} name={tech}>
+                          {ICONS[tech !== "next.js" ? tech : "nextjs"]}
+                        </IconContainer>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className="flex items-center flex-col text-center p-2.5 gap-2">
+                  <span className="bg-teal-400/50 px-2 w-full self-end py-2 rounded-sm text-zinc-950 border-teal-950 border-l-4">
+                    {language === "spanish" ? "Ir al " : "go to the "}
+                    <a
+                      className="ml-1 text-teal-950 underline font-bold"
+                      href={codeSource}
+                      rel="noopener"
+                      target="_blank"
+                    >
+                      {language === "spanish" ? "repositorio" : "repository"}
+                    </a>
+                  </span>
                 </div>
               </div>
             </div>
