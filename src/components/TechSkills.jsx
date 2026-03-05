@@ -26,7 +26,7 @@ const ICONS = {
   tailwind: <TailwindSvg />,
   react: <ReactSvg />,
   nextjs: <NextSvg />,
-  typescript: <TypescriptSvg />,
+  typescript: <TypescriptSvg fillColor="var(--color-gray-900)" />,
 };
 
 const TechSkills = () => {

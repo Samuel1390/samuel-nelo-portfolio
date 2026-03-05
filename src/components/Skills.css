@@ -45,6 +45,7 @@
   font-size: 0.9rem;
   background-color: var(--color-slate-950);
   color: var(--color-neutral-400);
+  fill: var(--color-neutral-400);
   border: 2px solid var(--color-neutral-400);
   border-radius: 6px;
   flex-basis: 100px;

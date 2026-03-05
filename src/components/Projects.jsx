@@ -21,7 +21,7 @@ const ICONS = {
   javascript: <JsSvg />,
   react: <ReactSvg />,
   tailwind: <TailwindSvg />,
-  typescript: <TypescriptSvg />,
+  typescript: <TypescriptSvg fillColor="#fff" />,
   nextjs: <NextSvg />,
 };
 function getTagStyles(color) {
@@ -90,7 +90,7 @@ export function Projects({ projects }) {
                   }`}
                 />
               </picture>
-              <div className="flex grow p-2.5 font-lato justify-between h-full  flex-col items-center">
+              <div className="flex justify-between p-4 h-full ">
                 <div className="project-text">
                   <div>
                     <a
@@ -127,34 +127,40 @@ export function Projects({ projects }) {
                         : typeDescriptionEn}
                     </p>
                   </div>
-                  <div className="gap-4 flex items-center justify-center">
-                    <h2 className="text-2xl font-bold text-zinc-900">
-                      {language === "spanish" ? "Tecnologías" : "Technologies"}
-                    </h2>
-                    <FiCodesandbox className="text-gray-900" />
+                  <div>
+                    <div className="gap-4 flex items-center justify-center">
+                      <h2 className="text-2xl font-bold text-zinc-900">
+                        {language === "spanish"
+                          ? "Tecnologías"
+                          : "Technologies"}
+                      </h2>
+                      <FiCodesandbox className="text-gray-900" />
+                    </div>
+                    <div className="skills-container">
+                      {technologies.map((tech) => {
+                        return (
+                          <IconContainer projectIcon={true} name={tech}>
+                            {ICONS[tech !== "next.js" ? tech : "nextjs"]}
+                          </IconContainer>
+                        );
+                      })}
+                    </div>
+                    <div className="flex items-center flex-col text-center p-2.5 gap-2">
+                      <span className="bg-teal-400/50 px-2 w-full self-end py-2 rounded-sm text-zinc-950 border-teal-950 border-l-4">
+                        {language === "spanish" ? "Ir al " : "go to the "}
+                        <a
+                          className="ml-1 text-teal-950 underline font-bold"
+                          href={codeSource}
+                          rel="noopener"
+                          target="_blank"
+                        >
+                          {language === "spanish"
+                            ? "repositorio"
+                            : "repository"}
+                        </a>
+                      </span>
+                    </div>
                   </div>
-                  <div className="skills-container">
-                    {technologies.map((tech) => {
-                      return (
-                        <IconContainer projectIcon={true} name={tech}>
-                          {ICONS[tech !== "next.js" ? tech : "nextjs"]}
-                        </IconContainer>
-                      );
-                    })}
-                  </div>
-                </div>
-                <div className="flex items-center flex-col text-center p-2.5 gap-2">
-                  <span className="bg-teal-400/50 px-2 w-full self-end py-2 rounded-sm text-zinc-950 border-teal-950 border-l-4">
-                    {language === "spanish" ? "Ir al " : "go to the "}
-                    <a
-                      className="ml-1 text-teal-950 underline font-bold"
-                      href={codeSource}
-                      rel="noopener"
-                      target="_blank"
-                    >
-                      {language === "spanish" ? "repositorio" : "repository"}
-                    </a>
-                  </span>
                 </div>
               </div>
             </div>
