@@ -30,10 +30,10 @@ export function Skills() {
         </svg>
       </div>
       <div className="grid gap-6 max-w-[800px] grid-cols-1 md:grid-cols-2 grid-row-6 md:grid-row-3 mx-auto w-fit">
-        <TechSkills />
         <EnglishLevel language={language} />
-        <MathLevel language={language} />
         <SoftSkills />
+        <MathLevel language={language} />
+        <TechSkills />
       </div>
     </section>
   );

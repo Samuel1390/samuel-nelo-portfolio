@@ -50,6 +50,7 @@
   flex-basis: 100px;
   flex-grow: 1;
 }
+
 /* svgs */
 .html {
   animation: html-icon 4s ease-in 1s both infinite;
@@ -74,6 +75,9 @@
 }
 .nextjs {
   animation: nextjs-icon 4s ease-in 3.1s both infinite;
+}
+.typescript {
+  animation: typescript-icon 4s ease-in 3.4s both infinite;
 }
 .skill {
   flex-grow: 1;
@@ -250,5 +254,23 @@
     border-color: var(--color-neutral-400);
     scale: 1;
     filter: drop-shadow(0 0 0 var(--color-nextjs));
+  }
+}
+@keyframes typescript-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-typescript);
+    border-color: var(--color-typescript);
+
+    box-shadow: 0 0 12px var(--color-typescript);
+    box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
+  }
+  40% {
+    color: var(--color-neutral-400);
+    border-color: var(--color-neutral-400);
+    scale: 1;
+    filter: drop-shadow(0 0 0 var(--color-typescript));
   }
 }

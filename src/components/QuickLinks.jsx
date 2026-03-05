@@ -23,9 +23,9 @@ const LINKS = [
     TITLE_ES: "Ver currículo",
     ICON: <ViewCvSvg />,
     HREF_EN:
-      "https://drive.google.com/file/d/1R6cw9tghhPaLdF2mf8qmy9ergjMi1dLq/view?usp=sharing",
+      "https://drive.google.com/file/d/11vXH46l0ayJ7my8SaQn-3zycEIDpPANd/view?usp=drive_link",
     HREF_ES:
-      "https://drive.google.com/file/d/14MCG6LYIkq_7E2cOXkyqk2Z6Bt6JKvVq/view?usp=sharing",
+      "https://drive.google.com/file/d/1hdhVSaf9RWm0Y7rLvjwb7n3KmPH78pgQ/view?usp=drive_link",
   },
 ];
 
