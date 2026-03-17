@@ -3,25 +3,25 @@ import snowContrastImage from "./public/project-snow-contrast.png";
 import oakCoffeeImage from "./public/project-okc.png";
 
 const projects = [
-  {
-    title: "Oak Coffee",
-    image: oakCoffeeImage,
-    projectDescription:
-      "La mejor tienda de café en Caracas Valencia | Cafeteía, panadería y repostería.",
-    projectDescriptionEn:
-      "The best coffee shop in Caracas Valencia | Coffee shop, bakery, and pastry shop.",
-    typeDescription:
-      "Página personalizada y llamativa para aumentar alcance de la cafetería.",
-    typeDescriptionEn:
-      "Custom and attractive page to increase the coffee shop's reach.",
-    pageLink: "https://samuel1390.github.io/Oak-Coffee/",
-    codeSource: "https://github.com/Samuel1390/Oak-Coffee",
-    technologies: ["html", "css", "javascript"],
-    tags: {
-      tagsEn: [],
-      tagsEs: [],
-    },
-  },
+  // {
+  //   title: "Oak Coffee",
+  //   image: oakCoffeeImage,
+  //   projectDescription:
+  //     "La mejor tienda de café en Caracas Valencia | Cafeteía, panadería y repostería.",
+  //   projectDescriptionEn:
+  //     "The best coffee shop in Caracas Valencia | Coffee shop, bakery, and pastry shop.",
+  //   typeDescription:
+  //     "Página personalizada y llamativa para aumentar alcance de la cafetería.",
+  //   typeDescriptionEn:
+  //     "Custom and attractive page to increase the coffee shop's reach.",
+  //   pageLink: "https://samuel1390.github.io/Oak-Coffee/",
+  //   codeSource: "https://github.com/Samuel1390/Oak-Coffee",
+  //   technologies: ["html", "css", "javascript"],
+  //   tags: {
+  //     tagsEn: [],
+  //     tagsEs: [],
+  //   },
+  // },
   {
     title: "Snow contrast",
     image: snowContrastImage,
@@ -35,8 +35,8 @@ const projects = [
     codeSource: "https://github.com/Samuel1390/Snow-contrast",
     technologies: ["html", "css", "javascript"],
     tags: {
-      tagsEn: [],
-      tagsEs: [],
+      tagsEn: [{ name: "Tool", color: "#60a5fa" }],
+      tagsEs: [{ name: "Herramienta", color: "#60a5fa" }],
     },
   },
   {
@@ -81,8 +81,8 @@ const projects = [
     codeSource: "https://github.com/Samuel1390/snow-games",
     technologies: ["html", "css", "typescript", "react", "tailwind", "next.js"],
     tags: {
-      tagsEn: [{ name: "Most recent app", color: "#60a5fa" }],
-      tagsEs: [{ name: "Página mas reciente", color: "#60a5fa" }],
+      tagsEn: [],
+      tagsEs: [],
     },
   },
 ];
