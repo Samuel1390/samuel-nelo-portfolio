@@ -1,0 +1,277 @@
+@import "tailwindcss";
+:root {
+  --color-html: #e34f26;
+  --color-css: #1572b6;
+  --color-javascript: #f7df1e;
+
+  --color-typescript: #3178c6;
+  --color-react: #61dafb;
+  --color-nextjs: #fafafa;
+  --color-tailwind: #06b6d4;
+
+  --color-git: #f05032;
+  --color-github: #fafafa;
+}
+
+.icon-container.soft-skill {
+  animation: github-icon 4s ease-in both infinite;
+}
+.icon-container.soft-skill:nth-child(3),
+.icon-container.soft-skill:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.icon-container.soft-skill:nth-child(5),
+.icon-container.soft-skill:nth-child(6) {
+  animation-delay: 0.8s;
+}
+.tech-icon {
+  will-change: filter, color, border-color, background-color;
+  fill: currentColor;
+  width: 1.2rem;
+  height: 1.2rem;
+  overflow: visible;
+  animation: icon-animation 0.8s ease-in both;
+}
+.icon-container {
+  padding: 6px;
+  gap: 6px;
+  display: flex;
+  align-items: center;
+  font-family:
+    system-ui,
+    -apple-system,
+    "System UI";
+  font-weight: bold;
+  font-size: 0.9rem;
+  background-color: var(--color-slate-950);
+  color: var(--color-neutral-400);
+  fill: var(--color-neutral-400);
+  border: 2px solid var(--color-neutral-400);
+  border-radius: 6px;
+  flex-basis: 100px;
+  flex-grow: 1;
+}
+
+/* svgs */
+.html {
+  animation: html-icon 4s ease-in 1s both infinite;
+}
+.css {
+  animation: css-icon 4s ease-in 1.3s both infinite;
+}
+.javascript {
+  animation: javascript-icon 4s ease-in 1.6s both infinite;
+}
+.git {
+  animation: git-icon 4s ease-in 1.9s both infinite;
+}
+.github {
+  animation: github-icon 4s ease-in 2.2s both infinite;
+}
+.tailwind {
+  animation: tailwind-icon 4s ease-in 2.5s both infinite;
+}
+.react {
+  animation: react-icon 4s ease-in 2.8s both infinite;
+}
+.nextjs {
+  animation: nextjs-icon 4s ease-in 3.1s both infinite;
+}
+.typescript {
+  animation: typescript-icon 4s ease-in 3.4s both infinite;
+}
+.skill {
+  flex-grow: 1;
+  flex-basis: 200px;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+  background-color: #0f0f1fcc;
+  border-radius: 10px;
+}
+.skills-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@keyframes icon-animation {
+  0% {
+    transform: rotate(0);
+    scale: 1;
+  }
+  50% {
+    transform: rotate(15deg);
+    scale: 1.1;
+  }
+  100% {
+    transform: rotate(0);
+    scale: 1;
+  }
+}
+@keyframes html-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-html);
+    border-color: var(--color-html);
+    box-shadow: 0 0 12px var(--color-html);
+    box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
+  }
+  40% {
+    color: var(--color-neutral-400);
+    border-color: var(--color-neutral-400);
+    filter: drop-shadow(0 0 0 var(--color-html));
+    scale: 1;
+  }
+}
+@keyframes css-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-css);
+    border-color: var(--color-css);
+
+    box-shadow: 0 0 12px var(--color-css);
+    box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
+  }
+  40% {
+    color: var(--color-neutral-400);
+    border-color: var(--color-neutral-400);
+    filter: drop-shadow(0 0 0 var(--color-css));
+    scale: 1;
+  }
+}
+@keyframes javascript-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-javascript);
+    border-color: var(--color-javascript);
+
+    box-shadow: 0 0 12px var(--color-javascript);
+    box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
+  }
+  40% {
+    color: var(--color-neutral-400);
+
+    border-color: var(--color-neutral-400);
+    scale: 1;
+    filter: drop-shadow(0 0 0 var(--color-javascript));
+  }
+}
+@keyframes react-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-react);
+    border-color: var(--color-react);
+
+    box-shadow: 0 0 12px var(--color-react);
+    box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
+  }
+  40% {
+    color: var(--color-neutral-400);
+
+    border-color: var(--color-neutral-400);
+    scale: 1;
+    filter: drop-shadow(0 0 0 var(--color-react));
+  }
+}
+@keyframes git-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-git);
+    border-color: var(--color-git);
+
+    box-shadow: 0 0 12px var(--color-git);
+    box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
+  }
+  40% {
+    color: var(--color-neutral-400);
+
+    border-color: var(--color-neutral-400);
+    scale: 1;
+    filter: drop-shadow(0 0 0 var(--color-git));
+  }
+}
+@keyframes github-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-github);
+    border-color: var(--color-github);
+
+    box-shadow: 0 0 12px var(--color-github);
+    box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
+  }
+  40% {
+    color: var(--color-neutral-400);
+    border-color: var(--color-neutral-400);
+    filter: drop-shadow(0 0 0 var(--color-github));
+    scale: 1;
+  }
+}
+@keyframes tailwind-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-tailwind);
+    border-color: var(--color-tailwind);
+
+    box-shadow: 0 0 12px var(--color-tailwind);
+    box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
+  }
+  40% {
+    color: var(--color-neutral-400);
+
+    border-color: var(--color-neutral-400);
+    scale: 1;
+    filter: drop-shadow(0 0 0 var(--color-tailwind));
+  }
+}
+@keyframes nextjs-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-nextjs);
+    border-color: var(--color-nextjs);
+
+    box-shadow: 0 0 12px var(--color-nextjs);
+    box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
+  }
+  40% {
+    color: var(--color-neutral-400);
+
+    border-color: var(--color-neutral-400);
+    scale: 1;
+    filter: drop-shadow(0 0 0 var(--color-nextjs));
+  }
+}
+@keyframes typescript-icon {
+  0% {
+  }
+  20% {
+    color: var(--color-typescript);
+    border-color: var(--color-typescript);
+
+    box-shadow: 0 0 12px var(--color-typescript);
+    box-shadow: 0 0 10px #fffa;
+    scale: 1.025;
+  }
+  40% {
+    color: var(--color-neutral-400);
+    border-color: var(--color-neutral-400);
+    scale: 1;
+    filter: drop-shadow(0 0 0 var(--color-typescript));
+  }
+}

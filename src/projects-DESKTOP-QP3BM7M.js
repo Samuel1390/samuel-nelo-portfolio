@@ -1,5 +1,6 @@
-import snowGamesImage from "/projects-imgs/snow-games.png";
-import snowContrastImage from "/projects-imgs/project-snow-contrast.png";
+import snowGamesImage from "./public/snow-games.png";
+import snowContrastImage from "./public/project-snow-contrast.png";
+import oakCoffeeImage from "./public/project-okc.png";
 
 const projects = [
   // {
@@ -34,8 +35,8 @@ const projects = [
     codeSource: "https://github.com/Samuel1390/Snow-contrast",
     technologies: ["html", "css", "javascript"],
     tags: {
-      tagsEn: [],
-      tagsEs: [],
+      tagsEn: [{ name: "Tool", color: "#60a5fa" }],
+      tagsEs: [{ name: "Herramienta", color: "#60a5fa" }],
     },
   },
   {
@@ -80,8 +81,8 @@ const projects = [
     codeSource: "https://github.com/Samuel1390/snow-games",
     technologies: ["html", "css", "typescript", "react", "tailwind", "next.js"],
     tags: {
-      tagsEn: [{ name: "Most recent app", color: "#60a5fa" }],
-      tagsEs: [{ name: "Página mas reciente", color: "#60a5fa" }],
+      tagsEn: [],
+      tagsEs: [],
     },
   },
 ];

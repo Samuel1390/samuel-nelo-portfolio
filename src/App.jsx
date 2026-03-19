@@ -1,9 +1,9 @@
 import "./globals.css";
 
-import { AboutMe } from "./components/AboutMe";
-import { Skills } from "./components/Skills";
+import { AboutMe } from "./components/aboutMe/AboutMe";
+import { Skills } from "./components/skills/Skills";
 import { Projects } from "./components/Projects";
-import { Top } from "./components/Top";
+import { Top } from "./components/top/Top";
 import projects from "./projects";
 
 function App() {
