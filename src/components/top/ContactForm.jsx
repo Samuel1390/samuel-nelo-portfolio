@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import { LanguageContext } from "../context/LanguageContext.jsx";
-import { Resend } from "resend";
+
 import handleSubmit from "./HandleSendMessage.js";
 
 const ES_DEFAULT_MENSAGE =
