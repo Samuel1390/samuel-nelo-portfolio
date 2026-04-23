@@ -107,8 +107,14 @@ const projects = [
       "react",
     ],
     tags: {
-      tagsEn: [{ name: "Most recent app", color: "#60a5fa" }],
-      tagsEs: [{ name: "Página mas reciente", color: "#60a5fa" }],
+      tagsEn: [
+        { name: "Most recent app", color: "#ffeb33" },
+        { name: "App with AI integration", color: "#60a5fa" },
+      ],
+      tagsEs: [
+        { name: "Página mas reciente", color: "#ffeb33" },
+        { name: "Aplicación con IA integrada", color: "#60a5fa" },
+      ],
     },
   },
 ];
