@@ -7,6 +7,7 @@ import ContactForm from "./ContactForm";
 import { LanguageBtn } from "./LanguageBtn";
 import { LanguageContext } from "../context/LanguageContext";
 import { ArrowDownIcon } from "@heroicons/react/24/solid";
+import GameRoom3D from "./GameRoom3D";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -65,6 +66,7 @@ export const Top = () => {
           <LanguageBtn />
           <QuickLinks />
         </div>
+        <GameRoom3D />
       </section>
       <div className="arrow-down">
         <ArrowDownIcon width={40} />

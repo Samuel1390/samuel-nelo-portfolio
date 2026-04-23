@@ -1,9 +1,8 @@
-import "../globals.css";
 import "./ProfilePicture.css";
 import { useContext } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 
-export function ProfilePicture() {
+export default function ProfilePicture() {
   const languageContext = useContext(LanguageContext);
   const { language } = languageContext;
   const closeKey = ">";

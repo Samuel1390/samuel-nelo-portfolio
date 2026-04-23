@@ -54,7 +54,7 @@ export function Projects({ projects }) {
       </div>
       <div
         ref={refProject}
-        className={`projects-container flex-wrap justify-center max-w-270 flex w-full p-7 gap-7 ${projectIsVisible ? "animate-fade-in-up" : "opacity-0"}`}
+        className={` flex-wrap justify-center max-w-200 flex w-[calc(100vw-20px)] p-7 gap-7 ${projectIsVisible ? "animate-fade-in-up" : "opacity-0"}`}
       >
         {projects.map((project) => {
           const {
@@ -139,7 +139,11 @@ export function Projects({ projects }) {
                     <div className="skills-container">
                       {technologies.map((tech) => {
                         return (
-                          <IconContainer projectIcon={true} name={tech}>
+                          <IconContainer
+                            key={tech}
+                            projectIcon={true}
+                            name={tech}
+                          >
                             {ICONS[tech !== "next.js" ? tech : "nextjs"]}
                           </IconContainer>
                         );

@@ -36,7 +36,7 @@ function QuickLinks() {
       <h2 className="font-jost font-bold text-gray-400 animate-fade-in-right">
         {language === "spanish" ? "Enlaces rápidos" : "Quick links"}
       </h2>
-      <div className="grid-links grid m-auto grid-cols-2 gap-3 my-5">
+      <div className="grid-links grid m-auto grid-cols-2 gap-3 my-5 max-w-110">
         {LINKS.map((link) => {
           return (
             <a
@@ -45,10 +45,11 @@ function QuickLinks() {
               rel="noopener"
               className={`grid-link font-jost animate-fade-in-left`}
               htmlFor={`${link.TITLE_EN.toLowerCase().replace(" ", "-")}-section`}
+              /*Dependiendo del idioma da un link a un cv distinto*/
               href={`${link.HREF_EN ? (language === "spanish" ? link.HREF_ES : link.HREF_EN) : `#${link.TITLE_EN.toLowerCase().replace(" ", "-")}-section`}`}
             >
               <div>
-                {link.ICON}
+                <span className={"max-sm:size-7 size-10"}>{link.ICON}</span>
                 <h2 className="pl-2">
                   {language === "spanish" ? link.TITLE_ES : link.TITLE_EN}
                 </h2>

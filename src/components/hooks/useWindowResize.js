@@ -26,6 +26,6 @@ function useWindowResize(delay = 200) {
     };
   }, [delay]);
 
-  return [windowSize];
+  return windowSize;
 }
 export default useWindowResize;

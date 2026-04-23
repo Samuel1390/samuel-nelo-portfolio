@@ -1,5 +1,4 @@
 /* GENERAL*/
-
 .top-text {
   width: 450px;
 }
@@ -51,12 +50,12 @@ p::after {
 }
 .top {
   margin: 20px 0;
-  padding: 20px 40px;
+  padding: 20px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  width: 100%;
+  gap: 10px;
+  width: calc(100vw - 20px);
   background-color: transparent;
 }
 

@@ -80,6 +80,33 @@ const projects = [
     codeSource: "https://github.com/Samuel1390/snow-games",
     technologies: ["html", "css", "typescript", "react", "tailwind", "next.js"],
     tags: {
+      tagsEn: [],
+      tagsEs: [],
+    },
+  },
+  {
+    title: "Segment",
+    image:
+      "https://github.com/Samuel1390/segment-ai/blob/main/public/segment-logo+label.jpg?raw=true",
+    projectDescription:
+      "Segment es un asistente de IA especializado en enseñar ciencias de la educación superior tales como computación, matemáticas, física, biología, ingeniería y química",
+    projectDescriptionEn:
+      "Segment is an AI assistant specialized in teaching higher education sciences such as computing, mathematics, physics, biology, engineering and chemistry",
+    typeDescription:
+      "Asistente de IA que conecta distintos modelos de lenguaje.",
+    typeDescriptionEn: "AI assistant that connects different language models.",
+    pageLink: "https://segment-ai-pi.vercel.app",
+    codeSource: "https://github.com/Samuel1390/segment-ai",
+    technologies: [
+      "html",
+      "css",
+      "typescript",
+      "react",
+      "tailwind",
+      "next.js",
+      "react",
+    ],
+    tags: {
       tagsEn: [{ name: "Most recent app", color: "#60a5fa" }],
       tagsEs: [{ name: "Página mas reciente", color: "#60a5fa" }],
     },

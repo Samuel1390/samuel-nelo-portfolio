@@ -47,12 +47,12 @@
   z-index: 200;
 }
 .container {
-  background-image: url(../public/img-portfolio.png);
+  background-image: url(/profile-pictures-imgs/img-portfolio.png);
   border-radius: 100%;
   outline: 1px solid var(--light-color);
 }
 .layer {
-  background-image: url(../public/img-portfolio-no-bg.png);
+  background-image: url(/profile-pictures-imgs/img-portfolio-no-bg.png);
   background-clip: polygon(
     0 0,
     100% 0,

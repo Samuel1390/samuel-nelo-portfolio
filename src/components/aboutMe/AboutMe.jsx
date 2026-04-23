@@ -5,6 +5,7 @@ import { LanguageContext } from "../context/LanguageContext";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import myImage from "/sam-nelo.jpeg";
 import { useContext } from "react";
+import ProfilePicture from "../top/ProfilePicture";
 
 import "./AboutMe.css";
 const paragraphs = {
@@ -94,6 +95,7 @@ export function AboutMe() {
                 alt="imagen de Samuel Nelo"
                 className="about-me-img hidden sm:block object-cover overflow-hidden"
               />
+              *
             </div>
           </section>
         </div>
