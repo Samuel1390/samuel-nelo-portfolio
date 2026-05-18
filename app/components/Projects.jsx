@@ -1,0 +1,176 @@
+"use client";
+import {
+  IconContainer,
+  HtmlSvg,
+  JsSvg,
+  CssSvg,
+  ReactSvg,
+  TailwindSvg,
+  TypescriptSvg,
+  NextSvg,
+} from "./Icons";
+import { FaCode } from "react-icons/fa";
+import { useContext } from "react";
+import { LanguageContext } from "./context/LanguageContext";
+import { FiCodesandbox } from "react-icons/fi";
+import { useIntersectionObserver } from "./hooks/useIntersectionObserver";
+
+const ICONS = {
+  html: <HtmlSvg />,
+  css: <CssSvg />,
+  javascript: <JsSvg />,
+  react: <ReactSvg />,
+  tailwind: <TailwindSvg />,
+  typescript: <TypescriptSvg fillColor="#fff" />,
+  nextjs: <NextSvg />,
+};
+function getTagStyles(color) {
+  return {
+    color: color,
+    backgroundColor: "#01010299",
+    borderColor: color,
+  };
+}
+
+export function Projects({ projects }) {
+  const languageContext = useContext(LanguageContext);
+  const [refTitle, titleIsVisible] = useIntersectionObserver();
+  const [refProject, projectIsVisible] = useIntersectionObserver();
+  const { language } = languageContext;
+
+  return (
+    <section
+      id="projects-section"
+      className="projects-section flex items-center flex-col"
+    >
+      <div className="flex items-center flex-col justify-center text-center p-2.5 gap-2.5">
+        <h2
+          ref={refTitle}
+          className={`text-gradient text-5xl  text-neutral-100 ${titleIsVisible ? "animate-fade-in-down" : "opacity-0"}`}
+        >
+          {language === "spanish" ? "Proyectos" : "Projects"}
+        </h2>
+        <FaCode size={70} />
+      </div>
+      <div
+        ref={refProject}
+        className={` flex-wrap justify-center max-w-200 flex w-[calc(100vw-20px)] p-7 gap-7 ${projectIsVisible ? "animate-fade-in-up" : "opacity-0"}`}
+      >
+        {projects.map((project) => {
+          const {
+            title,
+            image,
+            projectDescription,
+            projectDescriptionEn,
+            typeDescription,
+            typeDescriptionEn,
+            pageLink,
+            codeSource,
+            technologies,
+            tags,
+          } = project;
+          const tagsDefined =
+            language === "spanish" ? tags.tagsEs : tags.tagsEn;
+          return (
+            <div
+              key={title + pageLink} // projects section
+              className={`project flex flex-col grow basis-70 bg-neutral-50 border-neutral-50 border gap-2
+                
+                `}
+            >
+              <picture className="projects-picture min-h-50 w-full h-40 overflow-hidden">
+                <img
+                  loading="lazy"
+                  className="project-img size-full object-cover"
+                  src={image}
+                  alt={`imagen de la página de ${
+                    title + " " + language === "spanish"
+                      ? projectDescription
+                      : projectDescriptionEn
+                  }`}
+                />
+              </picture>
+              <div className="flex justify-between p-4 h-full ">
+                <div className="project-text">
+                  <div>
+                    <a
+                      href={pageLink}
+                      rel="noopener"
+                      target="_blank"
+                      className="hover:text-sky-400 my-8 text-sky-700 underline text-3xl font-semibold"
+                    >
+                      {title}
+                    </a>
+                    <div className="flex gap-2 flex-wrap py-1">
+                      {tagsDefined.map((tag) => {
+                        return (
+                          <h3
+                            key={title + tag.name}
+                            style={getTagStyles(tag.color)}
+                            className={
+                              "w-fit text-center border rounded-full px-1"
+                            }
+                          >
+                            {tag.name}
+                          </h3>
+                        );
+                      })}
+                    </div>
+                    <p className="text-slate-800 pt-4">
+                      {language === "spanish"
+                        ? projectDescription
+                        : projectDescriptionEn}
+                    </p>
+                    <p className="text-[.9rem] my-4 text-slate-600">
+                      {language === "spanish"
+                        ? typeDescription
+                        : typeDescriptionEn}
+                    </p>
+                  </div>
+                  <div>
+                    <div className="gap-4 flex items-center justify-center">
+                      <h2 className="text-2xl font-bold text-zinc-900">
+                        {language === "spanish"
+                          ? "Tecnologías"
+                          : "Technologies"}
+                      </h2>
+                      <FiCodesandbox className="text-gray-900" />
+                    </div>
+                    <div className="skills-container">
+                      {technologies.map((tech, i) => {
+                        return (
+                          <IconContainer
+                            key={tech + i.toString()}
+                            projectIcon={true}
+                            name={tech}
+                          >
+                            {ICONS[tech !== "next.js" ? tech : "nextjs"]}
+                          </IconContainer>
+                        );
+                      })}
+                    </div>
+                    <div className="flex items-center flex-col text-center p-2.5 gap-2">
+                      <span className="bg-teal-400/50 px-2 w-full self-end py-2 rounded-sm text-zinc-950 border-teal-950 border-l-4">
+                        {language === "spanish" ? "Ir al " : "go to the "}
+                        <a
+                          className="ml-1 text-teal-950 underline font-bold"
+                          href={codeSource}
+                          rel="noopener"
+                          target="_blank"
+                        >
+                          {language === "spanish"
+                            ? "repositorio"
+                            : "repository"}
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}

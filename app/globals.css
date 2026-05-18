@@ -1,26 +1,226 @@
 @import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #161616;
+  --foreground: #eee;
+  --code-font: "Source_Code_Pro";
+  /* colores del tema andromeda*/
+  /* Fondo y Primer Plano */
+  --andromeda-background: #23262e;
+  --andromeda-background-op-50: #23262ed3;
+  --andromeda-foreground: #d5ced9;
+  --andromeda-selection: #3d4352;
+
+  /* Colores de Sintaxis */
+  --andromeda-cyan: #00e8c6; /* Variables y constantes */
+  --andromeda-yellow: #ffe66d; /* Funciones */
+  --andromeda-green: #96e072; /* Strings) */
+  --andromeda-orange: #f39c12; /* Números y propiedades */
+  --andromeda-red: #ee5d43; /* Operadores y etiquetas */
+  --andromeda-purple: #c74ded; /* keywords */
+  --andromeda-pink: #f92672; /* Etiquetas de entidad*/
+  --andromeda-blue: #7cb7ff; /* Regex y marcado */
 }
 
 @theme inline {
+  --breakpoint-custom-sm: 690px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --dark-color: #222;
+  --light-color: #d4d4d4;
+  --live-color: #26ffac;
+  --live-color2: #f1ff26;
+  --dark-color2: #000931;
+  --dark-color3: #012a;
+  --font-geist-mono: "Source_Code_Pro", monospace;
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --breakpoint-xs: 480px;
+  --breakpoint-xs: 400px;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ededed;
+    --foreground: #2a2a2a;
   }
 }
 
 body {
-  background: var(--background);
+  padding: 0;
+  margin: 0;
   color: var(--foreground);
+  background-color: #102030;
   font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+
+  padding-bottom: 10rem;
+}
+* {
+  box-sizing: border-box;
+}
+
+.general-container {
+  max-width: 1200px;
+  overflow-x: hidden !important;
+  margin-inline: auto;
+}
+.h1,
+.text-gradient {
+  filter: drop-shadow(0 0 7px var(--live-color));
+  font-size: 2.8rem;
+  background-image: linear-gradient(
+    135deg,
+    var(--live-color),
+    var(--live-color2)
+  );
+  background-clip: text;
+  color: white;
+  color: transparent;
+  font-weight: bolder;
+  position: relative;
+  min-height: 2.5rem;
+}
+
+.h1::after {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 2px;
+  background-color: var(--light-color);
+  animation: opacity 0.9s infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  margin-left: 2px;
+}
+.h1::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 15%;
+  bottom: 0;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--live-color),
+    var(--live-color2)
+  );
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 10px 0 !important;
+}
+.text {
+  font-size: 0.9rem;
+  color: #d5d5d5;
+  color: var(--light-color);
+}
+.project-img {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+.project-icon-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  animation: none !important;
+  fill: #000;
+  color: #000;
+  box-shadow: 4px 4px 5px #0006;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  background-color: transparent;
+}
+.project-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+.dash {
+  @apply bg-amber-950 text-purple-50
+  hover:bg-emerald-500 hover:font-bold p-6;
+}
+/*Responsive*/
+
+@media screen and (max-width: 900px) {
+  .top {
+    flex-direction: column-reverse;
+  }
+  .about-info {
+    width: 100%;
+  }
+  .about-section p {
+    width: 90%;
+    text-align: center;
+  }
+
+  .max-w-120 {
+    padding: 20px 15px;
+  }
+
+  .icon-div {
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .about-imgs-container {
+    display: none;
+  }
+}
+.top-link {
+  padding: 10px 20px;
+  background-image: linear-gradient(
+    to right,
+    var(--color-emerald-950),
+    var(--color-emerald-700)
+  );
+  margin: 20px auto;
+  border-radius: 3px;
+  max-width: fit-content;
+  box-shadow: 0 0 10px #000a;
+}
+.top-link:hover {
+  opacity: 0.9;
+  outline: 2px solid #fff7;
+  outline-offset: -4px;
+  box-shadow: 0 0 15px #000a;
+  transition: box-shadow opacity;
+}
+.arrow-down {
+  width: fit-content;
+  margin: 0 auto;
+  animation: vertical-bounce;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes vertical-bounce {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    width: 200px;
+    height: 200px;
+  }
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project {
+    min-width: 300px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0s !important;
+  }
 }
