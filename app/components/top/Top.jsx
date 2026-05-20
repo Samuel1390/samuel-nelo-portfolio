@@ -1,13 +1,14 @@
 "use client";
 import "./Top.css";
-import QuickLinks from "./QuickLinks";
+import QuickLinks from "./left-side/QuickLinks";
 import { useState, useEffect, useRef } from "react";
 import { useContext } from "react";
-import ContactForm from "./ContactForm";
+import ContactForm from "./left-side/ContactForm";
 import { LanguageBtn } from "./LanguageBtn";
 import { LanguageContext } from "../context/LanguageContext";
 import { ArrowDownIcon } from "@heroicons/react/24/solid";
-import GameRoom3D from "./GameRoom3D";
+import GameRoom3D from "./right-side/GameRoom3D";
+import ProfilePicture from "./right-side/ProfilePicture";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -60,13 +61,15 @@ export const Top = () => {
           </h1>
           <Icons />
           <p
-            className="my-4 my-description text-pretty m-auto text font-jost"
+            style={{ color: "#fff !important" }}
+            className="my-4 my-description text-pretty m-auto text font-jost text-muted-foreground"
             dangerouslySetInnerHTML={{ __html: description || "" }}
           ></p>
           <LanguageBtn />
           <QuickLinks />
         </div>
-        <GameRoom3D />
+        <GameRoom3D language={language} />
+        <ProfilePicture className="csm:!hidden" />
       </section>
       <div className="arrow-down">
         <ArrowDownIcon width={40} />

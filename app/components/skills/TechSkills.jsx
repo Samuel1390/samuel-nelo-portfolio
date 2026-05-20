@@ -3,6 +3,7 @@ import React from "react";
 import { useContext, useState } from "react";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { LanguageContext } from "../context/LanguageContext";
+import techSkillsData from "./techSkillsData";
 import {
   HtmlSvg,
   CssSvg,
@@ -15,7 +16,6 @@ import {
   NextSvg,
   IconContainer,
 } from "../Icons";
-import { PiGraphBold } from "react-icons/pi";
 
 const ICONS = {
   html: <HtmlSvg />,
@@ -51,14 +51,11 @@ const TechSkills = () => {
         ref={ref}
         className={`skill ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
       >
-        <div className="skill-title flex gap-2.5 items-center justify-center">
-          <PiGraphBold size={28} />
-          <h2 className="subtitle">
-            {language === "spanish"
-              ? "Tecnologías y herramientas"
-              : "All technologies and tools"}
-          </h2>
-        </div>
+        <h2 className="subtitle text-center">
+          {language === "spanish"
+            ? "Tecnologías y herramientas"
+            : "All technologies and tools"}
+        </h2>
         <div className="skills-container">
           {Object.keys(ICONS).map((key) => (
             <div

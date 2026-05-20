@@ -4,8 +4,7 @@ import { useContext } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 import { IoMicSharp } from "react-icons/io5";
 import { VscDebug } from "react-icons/vsc";
-import { FaHandsHelping } from "react-icons/fa";
-import { MdLanguage, MdOpacity } from "react-icons/md";
+import { MdLanguage } from "react-icons/md";
 import { RiLightbulbFlashLine } from "react-icons/ri";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
@@ -21,7 +20,6 @@ const SoftSkills = () => {
       className={`skill ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
     >
       <div className="skill-title gap-2.5 flex justify-center items-center">
-        <FaHandsHelping size={28} />
         <h2 className="subtitle">
           {language === "spanish"
             ? "Todas las habilidades blandas"
