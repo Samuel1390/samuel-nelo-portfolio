@@ -5,6 +5,7 @@ import { IoPerson } from "react-icons/io5";
 import { LanguageContext } from "../context/LanguageContext";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { useContext } from "react";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 import "./AboutMe.css";
@@ -99,12 +100,14 @@ export function AboutMe() {
           </section>
         </div>
       </div>
-      <section className="w-full flex justify-center px-7">
-        <a href="#top-section" className="top-link font-jost">
-          {language === "spanish"
-            ? "Ir a la sección principal"
-            : "Go to the main section"}
-        </a>
+      <section className="w-full flex justify-center relative z-10 px-7">
+        <Button variant="secondary" className="my-10">
+          <a href="#top-section" className="font-jost">
+            {language === "spanish"
+              ? "Ir a la sección principal"
+              : "Go to the main section"}
+          </a>
+        </Button>
       </section>
     </>
   );

@@ -27,7 +27,7 @@ export function MeshGradientBackground({
 
   return (
     <div
-      className={cn("fixed inset-0 overflow-hidden", className)}
+      className={`fixed inset-0 overflow-hidden", ${className || ""}`}
       style={{ backgroundColor }}
     >
       {/* Gradient orbs */}

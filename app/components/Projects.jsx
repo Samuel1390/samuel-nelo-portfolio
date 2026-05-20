@@ -43,15 +43,12 @@ export function Projects({ projects }) {
       id="projects-section"
       className="projects-section flex items-center flex-col"
     >
-      <div className="flex items-center flex-col justify-center text-center p-2.5 gap-2.5">
-        <h2
-          ref={refTitle}
-          className={`text-gradient text-5xl  text-neutral-100 ${titleIsVisible ? "animate-fade-in-down" : "opacity-0"}`}
-        >
-          {language === "spanish" ? "Proyectos" : "Projects"}
-        </h2>
-        <FaCode size={70} />
-      </div>
+      <h2
+        ref={refTitle}
+        className={` text-gradient h-15 my-3 text-5xl text-neutral-100 ${titleIsVisible ? "animate-fade-in-down" : "opacity-0"}`}
+      >
+        {language === "spanish" ? "Proyectos" : "Projects"}
+      </h2>
       <div
         ref={refProject}
         className={` flex-wrap justify-center max-w-200 flex w-[calc(100vw-20px)] p-7 gap-7 ${projectIsVisible ? "animate-fade-in-up" : "opacity-0"}`}

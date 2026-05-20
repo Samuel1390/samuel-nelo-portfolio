@@ -11,7 +11,9 @@ function App() {
   return (
     <div className="general-container w-screen max-w-300 overflow-x-hidden">
       <MeshGradientBackgroundDemo />
-      <Top />
+      <div className="w-screen grid place-content-center max-w-[1200px] mx-auto">
+        <Top />
+      </div>
       <Projects projects={projects} />
       <Skills />
       <AboutMe />

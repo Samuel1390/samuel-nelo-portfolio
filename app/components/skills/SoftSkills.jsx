@@ -19,13 +19,11 @@ const SoftSkills = () => {
       ref={ref}
       className={`skill ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
     >
-      <div className="skill-title gap-2.5 flex justify-center items-center">
-        <h2 className="subtitle">
-          {language === "spanish"
-            ? "Todas las habilidades blandas"
-            : "All Soft skills"}
-        </h2>
-      </div>
+      <h2 className="subtitle">
+        {language === "spanish"
+          ? "Todas las habilidades blandas"
+          : "All Soft skills"}
+      </h2>
       <div className="skills-container">
         <div className="skills-container">
           <div className="icon-container soft-skill">

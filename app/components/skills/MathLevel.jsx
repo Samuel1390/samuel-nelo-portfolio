@@ -8,7 +8,7 @@ const MathLevel = ({ language }) => {
       ref={ref}
       className={`skill row-span-2 p-6 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
     >
-      <h2 className=" p-4 text-3xl font-bold">
+      <h2 className=" py-4 text-3xl font-bold">
         {language === "spanish" ? "Nivel de matemáticas" : "Math level"}
       </h2>
       {language === "spanish" ? (

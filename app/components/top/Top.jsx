@@ -62,8 +62,8 @@ export const Top = () => {
           <Icons />
           <p
             style={{ color: "#fff !important" }}
-            className="my-4 my-description text-pretty m-auto text font-jost text-muted-foreground"
-            dangerouslySetInnerHTML={{ __html: description || "" }}
+            className="my-4 relative z-100 my-description text-pretty m-auto text font-jost text-muted-foreground"
+            dangerouslySetInnerHTML={{ __html: description }}
           ></p>
           <LanguageBtn />
           <QuickLinks />
@@ -72,7 +72,7 @@ export const Top = () => {
         <ProfilePicture className="csm:!hidden" />
       </section>
       <div className="arrow-down">
-        <ArrowDownIcon width={40} />
+        <ArrowDownIcon width={40} color="white" />
       </div>
     </>
   );

@@ -8,8 +8,8 @@ import CompleteModel from "./CompleteModel";
 const GameRoom3D = ({ language }) => {
   return (
     <>
-      <div className="max-csm:hidden w-screen h-140 elative max-w-70 ">
-        <div className="hover:cursor-grab active:cursor-grabbing absolute -right-13 h-150 w-screen max-w-170">
+      <div className="max-csm:hidden h-140  relative w-[50vw] max-w-120 z-400">
+        <div className="hover:cursor-grab active:cursor-grabbing  absolute -right-10 h-150 w-screen max-w-170">
           <Canvas
             frameloop="demand"
             dpr={[1, 2]}
