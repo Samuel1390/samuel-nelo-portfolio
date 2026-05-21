@@ -3,6 +3,7 @@ import { useGLTF, Text3D } from "@react-three/drei";
 import { Room } from "./Isometric_gaming_room";
 import { Model as Gaming_laptop } from "../3d-furtniture/Gaming_laptop";
 import { Model as React_logo_circle } from "../3d-furtniture/React_logo_circle";
+import { Model as Rubiks_cube } from "../3d-furtniture/Rubiks_cube";
 const paths = {
   javascript: "/models/javascript_logo.glb",
   node: "/models/node.js_logo__3d_model.glb",
@@ -37,8 +38,7 @@ const CompleteModel = () => {
           position={[-0.45, 0.58, -0.55]}
           scale={0.1}
         />
-        <Model
-          path={paths.rubiksCube}
+        <Rubiks_cube
           rotation={[0, Math.PI + 0.1, 0]}
           position={[-0.83, 1.6, -0.26]}
           scale={0.0005}

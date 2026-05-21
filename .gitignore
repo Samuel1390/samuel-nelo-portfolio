@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# modelos glb que no se estan usando
+/models/react_logo_circle.glb
+/models/rubiks_cube.glb
+/models/gaming-laptop.glb
