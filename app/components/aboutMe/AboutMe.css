@@ -45,3 +45,52 @@
   border-radius: 100%;
   box-shadow: 0 0 25px #000;
 }
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 8px; /* Opcional, puedes cambiarlo o quitarlo */
+  cursor: pointer;
+  background-color: #222; /* Fondo opaco normal */
+  color: #fff; /* Color de texto inicial */
+  overflow: hidden; /* Para ocultar el exceso de la animación */
+  transition: color 0.5s ease; /* Transición suave del color del texto (máx 500ms) */
+  z-index: 1;
+}
+
+/* Pseudo-elemento que hará el “recorrido” blanco */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.btn:hover::before {
+  transform: scaleX(1);
+}
+
+.btn:hover {
+  color: #222;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  margin-top: 40px;
+}

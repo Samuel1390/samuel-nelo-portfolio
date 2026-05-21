@@ -48,7 +48,7 @@ export function AboutMe() {
     place-content-center p-0
     flex justify-center ${containerIsVisible ? "animate-fade-in-up" : "opacity-0"} `}
       >
-        <div className="about-section border border-solid border-[--light-color] flex grow-{1} font-lato bg-(--dark-color3) h-full">
+        <div className="about-section border border-solid border-neutral-50 flex grow-{1} font-lato bg-(--dark-color3) h-full">
           <section className="about-me-section">
             <div className="about-text-container max-w-120 p-10 text-center">
               <div className="icon-div">
@@ -100,14 +100,14 @@ export function AboutMe() {
           </section>
         </div>
       </div>
-      <section className="w-full flex justify-center relative z-10 px-7">
-        <Button variant="secondary" className="my-10">
+      <section className="btn-container">
+        <button className="btn">
           <a href="#top-section" className="font-jost">
             {language === "spanish"
               ? "Ir a la sección principal"
               : "Go to the main section"}
           </a>
-        </Button>
+        </button>
       </section>
     </>
   );
