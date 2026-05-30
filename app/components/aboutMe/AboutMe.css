@@ -1,9 +1,10 @@
 .subtitle {
   text-align: start;
   color: var(--light-color);
+  font-weight: 700;
 }
 .text {
-  color: #bbb;
+  color: #fff;
   text-align: start;
 }
 .icon-div {

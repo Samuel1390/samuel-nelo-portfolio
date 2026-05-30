@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 export interface MeshGradientBackgroundProps {
   className?: string;
@@ -17,7 +18,7 @@ export function MeshGradientBackground({
   className,
   children,
   colors = ["#7c3aed", "#2563eb", "#06b6d4", "#8b5cf6"],
-  speed = 1,
+  speed = 20,
   backgroundColor = "#030014",
 }: MeshGradientBackgroundProps) {
   const duration1 = 60 / speed;
@@ -27,7 +28,7 @@ export function MeshGradientBackground({
 
   return (
     <div
-      className={`fixed inset-0 overflow-hidden", ${className || ""}`}
+      className={cn("fixed inset-0 overflow-hidden", className || "")}
       style={{ backgroundColor }}
     >
       {/* Gradient orbs */}
@@ -152,5 +153,11 @@ export function MeshGradientBackground({
 }
 
 export default function MeshGradientBackgroundDemo() {
-  return <MeshGradientBackground />;
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  return isMounted && <MeshGradientBackground />;
 }

@@ -28,7 +28,6 @@ export const Top = () => {
   const [description, setDescription] = useState("");
   const isMounted = useRef(true);
   useEffect(() => {
-    isMounted.current = true;
     async function typingText(element, setFuntion, time) {
       const completedTitle = element;
       for (let i = 0; i <= completedTitle.length; i++) {
@@ -38,18 +37,26 @@ export const Top = () => {
         setFuntion(completedTitle.slice(0, i));
       }
     }
-    async function typingHtmlText(htmlString, setFuntion, time) {
-      setFuntion("");
-      for (let i = 0; i <= htmlString.length; i++) {
-        await delay(time);
-        if (!isMounted.current) return;
-        setFuntion(htmlString.slice(0, i));
+    let isCancelled = false;
+
+    async function typeDescription() {
+      setDescription("");
+      for (let i = 0; i < currentDescription.length; i++) {
+        if (isCancelled) return;
+
+        setDescription((prev) => {
+          if (isCancelled) return prev;
+          return currentDescription.slice(0, i + 1);
+        });
+
+        await delay(20);
       }
     }
+
+    typeDescription();
     typingText(title, setTitle, 40);
-    typingHtmlText(currentDescription, setDescription, 15);
     return () => {
-      isMounted.current = false;
+      isCancelled = true;
     };
   }, [language, currentDescription]);
   return (
