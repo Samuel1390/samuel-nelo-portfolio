@@ -18,21 +18,38 @@ const projects = [
   //     tagsEs: [],
   //   },
   // },
+  // {
+  //   title: "Snow contrast",
+  //   image: "/projects-imgs/project-snow-contrast.png",
+  //   projectDescription:
+  //     "Herramienta para desarrolladores frontend y diseñadores gráficos | Genera colores contrastados y observa los resultados en tiempo real con elementos comunmente vistos en páginas web.",
+  //   projectDescriptionEn:
+  //     "Tool for frontend developers and graphic designers | Generate contrasting colors and see the results in real-time with commonly seen web page elements.",
+  //   typeDescription: "Herramienta generadora de colores.",
+  //   typeDescriptionEn: "Color generator tool.",
+  //   pageLink: "https://samuel1390.github.io/Snow-contrast/",
+  //   codeSource: "https://github.com/Samuel1390/Snow-contrast",
+  //   technologies: ["html", "css", "javascript"],
+  //   tags: {
+  //     tagsEn: [],
+  //     tagsEs: [],
+  //   },
+  // },
   {
-    title: "Snow contrast",
-    image: "/projects-imgs/project-snow-contrast.png",
+    title: "Quick App",
+    image: "/projects-imgs/quick-app-opengraph-image.png",
     projectDescription:
-      "Herramienta para desarrolladores frontend y diseñadores gráficos | Genera colores contrastados y observa los resultados en tiempo real con elementos comunmente vistos en páginas web.",
+      "Mide el rendimiento de cualquier sitio web. Solo ingresa la url y obtendrás un diagnóstico detallado acerca de su rendimiento, la velocidad de carga y otros aspectos clave.",
     projectDescriptionEn:
-      "Tool for frontend developers and graphic designers | Generate contrasting colors and see the results in real-time with commonly seen web page elements.",
-    typeDescription: "Herramienta generadora de colores.",
-    typeDescriptionEn: "Color generator tool.",
-    pageLink: "https://samuel1390.github.io/Snow-contrast/",
-    codeSource: "https://github.com/Samuel1390/Snow-contrast",
-    technologies: ["html", "css", "javascript"],
+      "Measure the performance of any website. Just enter the url and get a detailed diagnosis of its performance, loading speed and other key aspects.",
+    typeDescription: "Herramienta de análisis de rendimiento web.",
+    typeDescriptionEn: "Web performance analysis tool.",
+    pageLink: "https://quick-app-rosy.vercel.app",
+    codeSource: "https://github.com/Samuel1390/quick-app",
+    technologies: ["html", "css", "react", "tailwind", "next.js", "typescript"],
     tags: {
-      tagsEn: [],
-      tagsEs: [],
+      tagsEn: [{ name: "Most recent app", color: "#ffeb33" }],
+      tagsEs: [{ name: "Página mas reciente", color: "#ffeb33" }],
     },
   },
   {
