@@ -1,7 +1,11 @@
 import React from "react";
 import { Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
-
+import useWindowResize from "../hooks/useWindowResize";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import { Canvas } from "@react-three/fiber";
+import MechanicalKeyBoard from "./Mechanical_keyboard";
+import { Spinner } from "../top/right-side/GameRoom3D";
 const TEXTS = {
   spanish: {
     title: "Logros",
@@ -137,5 +141,50 @@ const Achievements = ({ language, className = "", ...props }) => {
     </div>
   );
 };
+const AchievementsDesktop = ({ language }) => {
+  const { width } = useWindowResize();
+  const [refAchievements, refAchievementsIsVisible] = useIntersectionObserver({
+    threshold: 0,
+  });
+  const [canvasActive, setCanvasActive] = React.useState(false);
+  return (
+    <section
+      ref={refAchievements}
+      className="grid grid-cols-1 relative overflow-hidden"
+    >
+      {width >= 890 && refAchievementsIsVisible ? (
+        <div className="relative w-full h-full">
+          <React.Suspense fallback={<Spinner />}>
+            <Canvas
+              onClick={() => setCanvasActive(true)}
+              onPointerLeave={async () =>
+                setTimeout(() => {
+                  setCanvasActive(false);
+                }, 1000)
+              }
+              className="absolute inset-0 max-h-[700px]"
+            >
+              <ambientLight intensity={1} />
+              <directionalLight position={[10, 10, 10]} />
+              <MechanicalKeyBoard scale={10} />
+            </Canvas>
+          </React.Suspense>
+          <div className="absolute z-50 right-0 max-w-[50%] text-white pointer-events-none top-20">
+            <Achievements
+              language={language}
+              className={
+                canvasActive ? "pointer-events-auto" : "pointer-events-none"
+              }
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="w-full flex items-center justify-center">
+          <Achievements className="pr-3 mx-2 max-w-lg" />
+        </div>
+      )}
+    </section>
+  );
+};
 
-export default Achievements;
+export default AchievementsDesktop;

@@ -3,23 +3,11 @@ import { FaGraduationCap } from "react-icons/fa6";
 import { TbTargetArrow } from "react-icons/tb";
 import { IoPerson } from "react-icons/io5";
 import { LanguageContext } from "../context/LanguageContext";
-import MechanicalKeyBoard from "@/app/components/aboutMe/Mechanical_keyboard";
-import { Canvas } from "@react-three/fiber";
-import Achivements from "./Achivements";
+import AchievementsDesktop from "./Achivements";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
-import { useContext, useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
-import ProfilePicture from "../top/right-side/ProfilePicture";
-import AIWorkflow from "./ai-workflow";
+import { useContext, useState } from "react";
+import AIWorkflow from "./AiWorkflow";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
-import useWindowResize from "../hooks/useWindowResize";
-import { Geist } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 import "./AboutMe.css";
 const paragraphs = {
@@ -45,9 +33,7 @@ export function AboutMe() {
     threshold: 0.2,
   });
   const { language } = useContext(LanguageContext);
-  const [numberOnHover, setNumberOnHover] = useState(null);
   const [canvasActive, setCanvasActive] = useState(false);
-  const { width } = useWindowResize();
   return (
     <section>
       <h2
@@ -116,119 +102,11 @@ export function AboutMe() {
           </section>
         </div>
       </article>
-      <article className="w-full max-w-4xl mx-auto text-white  relative z-30">
-        <h2 className="text-2xl text-center text-neutral-50 my-10">
-          {language === "spanish"
-            ? "Cómo se integra la IA en mi flujo de trabajo"
-            : "How AI is integrated into my workflow"}
-        </h2>
-        {/* Seccion de flujo de trabajo con ia */}
-        <div className="grid w-full mx-auto px-5 md:grid-cols-2 gap-10">
-          <div className="bg-gradient-to-br shadow-neutral-900/60 shadow-md relative to-gray-800/80 p-6 from-gray-950/80 backdrop-blur-sm border rounded-lg border-neutral-400 overflow-hidden">
-            <Image
-              className="absolute opacity-30 bottom-[-10%] left-[-10%] z-50 pointer-events-none"
-              height={280}
-              width={280}
-              loading="lazy"
-              alt={"Gemini"}
-              src={"/gemini.png"}
-            />
-            <Image
-              className="absolute blur-sm opacity-20 bottom-[-10%] left-[-10%] z-45 pointer-events-none"
-              height={280}
-              width={280}
-              loading="lazy"
-              alt={"Gemini"}
-              src={"/gemini.png"}
-            />
-            <h3 className="text-lg font-bold">
-              {language === "spanish" ? "IA" : "AI"}
-            </h3>
-            <div className="text-pre">
-              {language === "spanish"
-                ? formatText(
-                    AIWorkflow.ai.spanishText,
-                    numberOnHover,
-                    setNumberOnHover,
-                  )
-                : formatText(
-                    AIWorkflow.ai.englishText,
-                    numberOnHover,
-                    setNumberOnHover,
-                  )}
-            </div>
-          </div>
-          <div className="bg-gradient-to-br shadow-neutral-900/60 shadow-md relative to-gray-800/80 p-6 from-gray-950/80 backdrop-blur-sm border rounded-lg border-neutral-400 overflow-hidden">
-            <Image
-              className="absolute opacity-30 bottom-[-10%] left-[-10%] z-50 pointer-events-none rounded-full"
-              height={280}
-              width={280}
-              loading="lazy"
-              alt={"Gemini"}
-              src={"https://avatars.githubusercontent.com/u/195463641?v=4"}
-            />
-            <Image
-              className="absolute blur-sm opacity-20 bottom-[-10%] left-[-10%] z-45 pointer-events-none rounded-full"
-              height={280}
-              width={280}
-              loading="lazy"
-              alt={"Gemini"}
-              src={"https://avatars.githubusercontent.com/u/195463641?v=4"}
-            />
-            <h3 className="text-lg font-bold">
-              {language === "spanish"
-                ? "Yo como programador"
-                : "Me as a programmer"}
-            </h3>
-            <div className="text-pre">
-              {language === "spanish"
-                ? formatText(
-                    AIWorkflow.programmer.spanishText,
-                    numberOnHover,
-                    setNumberOnHover,
-                  )
-                : formatText(
-                    AIWorkflow.programmer.englishText,
-                    numberOnHover,
-                    setNumberOnHover,
-                  )}
-            </div>
-          </div>
-        </div>
-      </article>
+      {/* Seccion de flujo de trabajo con ia */}
+      <AIWorkflow language={language} />
 
       {/* Seccion de logros con el teclado mecanico en 3d a la izquierda */}
-      <section className="grid grid-cols-1 relative overflow-hidden">
-        {width >= 890 ? (
-          <div className="relative w-full h-full">
-            <Canvas
-              onClick={() => setCanvasActive(true)}
-              onPointerLeave={async () =>
-                setTimeout(() => {
-                  setCanvasActive(false);
-                }, 1000)
-              }
-              className="absolute inset-0 max-h-[700px]"
-            >
-              <ambientLight intensity={1} />
-              <directionalLight position={[10, 10, 10]} />
-              <MechanicalKeyBoard scale={10} />
-            </Canvas>
-            <div className="absolute z-50 right-0 max-w-[50%] text-white pointer-events-none top-20">
-              <Achivements
-                language={language}
-                className={
-                  canvasActive ? "pointer-events-auto" : "pointer-events-none"
-                }
-              />
-            </div>
-          </div>
-        ) : (
-          <div className="w-full flex items-center justify-center">
-            <Achivements className="pr-3 mx-2 max-w-lg" />
-          </div>
-        )}
-      </section>
+      <AchievementsDesktop language={language} />
       {/* Boton  para subir al hero(top-section)*/}
       <section className="btn-container">
         <button className="btn">
@@ -241,23 +119,4 @@ export function AboutMe() {
       </section>
     </section>
   );
-}
-function formatText(text, numberOnHover, setNumberOnHover) {
-  return text.split("\n\n").map((line, i) => (
-    <div
-      key={text + (i + 1)}
-      onMouseEnter={() => setNumberOnHover(i + 1)}
-      onMouseLeave={() => setNumberOnHover(null)}
-      className={cn(
-        "block my-2 transition-all duration-300 ease-in-out cursor-default relative z-60",
-        numberOnHover === i + 1
-          ? "scale-110 blur-0"
-          : numberOnHover !== null
-            ? "blur-sm scale-90 opacity-50"
-            : "blur-0 scale-100 opacity-100",
-      )}
-    >
-      {line}
-    </div>
-  ));
 }

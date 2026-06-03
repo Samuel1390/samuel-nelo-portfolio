@@ -47,7 +47,10 @@ const GameRoom3D = ({ language }) => {
   );
 };
 
-const Spinner = ({ text = "", className = "w-10 h-10 border-blue-500" }) => {
+export const Spinner = ({
+  text = "",
+  className = "w-10 h-10 border-blue-500",
+}) => {
   return (
     <Html
       center
