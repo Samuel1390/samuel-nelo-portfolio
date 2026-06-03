@@ -1,7 +1,7 @@
 "use client";
 import "./Top.css";
 import QuickLinks from "./left-side/QuickLinks";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, memo } from "react";
 import { useContext } from "react";
 import ContactForm from "./left-side/ContactForm";
 import { LanguageBtn } from "./LanguageBtn";
@@ -9,8 +9,6 @@ import { LanguageContext } from "../context/LanguageContext";
 import { ArrowDownIcon } from "@heroicons/react/24/solid";
 import GameRoom3D from "./right-side/GameRoom3D";
 import ProfilePicture from "./right-side/ProfilePicture";
-
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const mySpanishDescription = `Desarrollador <strong>Front-end</strong>💻 con pasión por el
 <strong>Software</strong> y la <strong>Tecnología</strong> Dedicado a
@@ -21,56 +19,50 @@ const myEnglishDescription = `Front-end <strong>Developer</strong>💻 with a pa
 creating web applications that are both functional and visually appealing.`;
 
 export const Top = () => {
-  const [title, setTitle] = useState("Samuel Nelo");
   const { language } = useContext(LanguageContext);
-  const currentDescription =
-    language === "spanish" ? mySpanishDescription : myEnglishDescription;
-  const [description, setDescription] = useState("");
-  const isMounted = useRef(true);
-  useEffect(() => {
-    async function typingText(element, setFuntion, time) {
-      const completedTitle = element;
-      for (let i = 0; i <= completedTitle.length; i++) {
-        await delay(time);
+  const titleRef = useRef(null);
+  const descRef = useRef(null);
 
-        if (!isMounted.current) return;
-        setFuntion(completedTitle.slice(0, i));
-      }
-    }
+  useEffect(() => {
+    const titleText = "Samuel Nelo";
+    const descText =
+      language === "spanish" ? mySpanishDescription : myEnglishDescription;
+
     let isCancelled = false;
 
-    async function typeDescription() {
-      setDescription("");
-      for (let i = 0; i < currentDescription.length; i++) {
+    // Función auxiliar para escribir en el DOM directamente
+    const typeWriter = async (text, element, speed) => {
+      if (!element) return;
+      for (let i = 0; i <= text.length; i++) {
         if (isCancelled) return;
-
-        setDescription((prev) => {
-          if (isCancelled) return prev;
-          return currentDescription.slice(0, i + 1);
-        });
-
-        await delay(20);
+        element.innerHTML = text.slice(0, i) + (i < text.length ? "|" : "");
+        await new Promise((r) => setTimeout(r, speed));
       }
-    }
+    };
 
-    typeDescription();
-    typingText(title, setTitle, 40);
+    // Ejecutar ambas animaciones sin disparar renderizados innecesarios
+    typeWriter(titleText, titleRef.current, 40);
+    typeWriter(descText, descRef.current, 20);
+
     return () => {
       isCancelled = true;
     };
-  }, [language, currentDescription]);
+  }, [language]);
+  const renderCounter = useRef(0);
+  renderCounter.current += 1;
+  console.log(renderCounter.current);
   return (
     <>
       <section id="top-section" className="top bg-(--color-background)">
         <div className="top-text font-montserrat">
-          <h1 className="h1 bg-gradient-to-lf-(--live-color)-(--live-color2)">
-            {title}
-          </h1>
+          <h1
+            className="h1 bg-gradient-to-lf-(--live-color)-(--live-color2)"
+            ref={titleRef}
+          ></h1>
           <Icons />
           <p
-            style={{ color: "#fff !important" }}
             className="my-4 relative z-100 my-description text-pretty m-auto text font-jost text-muted-foreground"
-            dangerouslySetInnerHTML={{ __html: description }}
+            ref={descRef}
           ></p>
           <LanguageBtn />
           <QuickLinks />

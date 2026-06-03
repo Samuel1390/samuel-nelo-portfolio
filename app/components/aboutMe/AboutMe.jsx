@@ -122,7 +122,7 @@ export function AboutMe() {
             ? "Cómo se integra la IA en mi flujo de trabajo"
             : "How AI is integrated into my workflow"}
         </h2>
-
+        {/* Seccion de flujo de trabajo con ia */}
         <div className="grid w-full mx-auto px-5 md:grid-cols-2 gap-10">
           <div className="bg-gradient-to-br shadow-neutral-900/60 shadow-md relative to-gray-800/80 p-6 from-gray-950/80 backdrop-blur-sm border rounded-lg border-neutral-400 overflow-hidden">
             <Image

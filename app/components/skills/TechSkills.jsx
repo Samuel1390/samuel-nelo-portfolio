@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { LanguageContext } from "../context/LanguageContext";
 import techSkillsData from "./techSkillsData";
+import Card from "./Card";
 import {
   HtmlSvg,
   CssSvg,
@@ -47,7 +48,7 @@ const TechSkills = () => {
   };
   return (
     <>
-      <div
+      <Card
         ref={ref}
         className={`skill ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
       >
@@ -69,7 +70,7 @@ const TechSkills = () => {
             </div>
           ))}
         </div>
-      </div>
+      </Card>
       <div
         className={`${iconOnHover ? "animate-fade-in-left opacity-100" : "opacity-0"}
         fixed flex items-center text-right text-pretty z-400 bottom-3 mask-l-from-85% to-0% bg-neutral-900/80 max-w-110 text-white border-t right-0

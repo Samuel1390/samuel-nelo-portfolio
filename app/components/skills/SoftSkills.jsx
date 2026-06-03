@@ -7,6 +7,7 @@ import { VscDebug } from "react-icons/vsc";
 import { MdLanguage } from "react-icons/md";
 import { RiLightbulbFlashLine } from "react-icons/ri";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import Card from "./Card";
 
 import { TbMathIntegral } from "react-icons/tb";
 
@@ -15,7 +16,7 @@ const SoftSkills = () => {
 
   const { language } = useContext(LanguageContext);
   return (
-    <div
+    <Card
       ref={ref}
       className={`skill ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
     >
@@ -68,7 +69,7 @@ const SoftSkills = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

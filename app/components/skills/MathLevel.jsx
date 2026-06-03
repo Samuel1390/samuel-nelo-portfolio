@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import Card from "./Card";
 const MathLevel = ({ language }) => {
   const [ref, isVisible] = useIntersectionObserver();
   return (
-    <div
+    <Card
       ref={ref}
       className={`skill row-span-2 p-6 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
     >
@@ -16,7 +17,7 @@ const MathLevel = ({ language }) => {
       ) : (
         <MathLevelParagraphEn />
       )}
-    </div>
+    </Card>
   );
 };
 

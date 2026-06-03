@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export interface MeshGradientBackgroundProps {
   className?: string;
@@ -153,11 +153,5 @@ export function MeshGradientBackground({
 }
 
 export default function MeshGradientBackgroundDemo() {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  return isMounted && <MeshGradientBackground />;
+  return <MeshGradientBackground />;
 }

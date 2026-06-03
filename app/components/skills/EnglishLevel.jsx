@@ -1,9 +1,10 @@
 "use client";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import Card from "./Card";
 const EnglishLevel = ({ language }) => {
   const [ref, isVisible] = useIntersectionObserver();
   return (
-    <div
+    <Card
       ref={ref}
       className={`skill row-span-2 py-4 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
     >
@@ -17,7 +18,7 @@ const EnglishLevel = ({ language }) => {
       ) : (
         <LevelEnglishParagraphEn />
       )}
-    </div>
+    </Card>
   );
 };
 export const LevelEnglishParagraphEn = () => {
