@@ -100,7 +100,7 @@ const ContactForm = () => {
       </div>
       <form
         onSubmit={(e) => handleClickSubmit(e)}
-        className={`${showForm ? "opacity-100 flex" : "opacity-0 hidden"}  min-w-70  transition-opacity transitio z-100 absolute flex-col gap-4 border border-neutral-100 text-neutral-200 p-4 bg-slate-950 contact-form shadow-2xl shadow-neutral-900`}
+        className={`${showForm ? "opacity-100 flex" : "opacity-0 hidden"}  min-w-70  transition-opacity transitio z-400 absolute flex-col gap-4 border border-neutral-100 text-neutral-200 p-4 bg-slate-950 contact-form shadow-2xl shadow-neutral-900`}
         action=""
       >
         <svg
